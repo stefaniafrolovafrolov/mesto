@@ -1,0 +1,7 @@
+.page {
+  margin: 0 auto;
+  max-width: 1280px;
+  background: #000;
+  display: flex;
+  justify-items: center;
+}

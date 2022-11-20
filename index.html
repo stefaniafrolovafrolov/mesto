@@ -1,32 +1,128 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta
-      name="description"
-      content="Лендинг page с карточками городов."
-      >
-    <meta name="author" content="Vadim Frolov" >
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <link rel="stylesheet" href="./pages/index.css" >
-    <link
-      rel="shortcut icon"
-      href="./images/logo-yandex.png"
-      >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Лендинг page с карточками городов." />
+    <meta name="author" content="Vadim Frolov" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="shortcut icon" href="./images/logo-icon.png" />
     <title>Проектная работа Maestro</title>
     <style>
-      .root {
-        
+      .profile {
+        outline: 2px white solid;
+        max-width: 880px;
+        padding: 40px 200px 0 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .profile__avatar {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+      }
+
+      .profile__info {
+        margin: 0;
+        padding: 0;
+        min-height: 73px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 22px 0 25px 30px;
+        max-width: 336px;
+      }
+
+      .profile__title {
+        margin: 0;
+        padding: 0;
+        min-height: 39px;
+        max-width: 294px;
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 48px;
+        color: #ffffff;
+        padding-bottom: 16px;
+      }
+      .profile__subtitle {
+        margin: 0;
+        padding: 0;
+        min-height: 18px;
+        max-width: 336px;
+        font-family: "Inter";
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #ffffff;
+      }
+
+      .profile__edit-button {
+        margin: 0;
+        padding: 0;
+        background-image: url(./images/Edit\ Button.svg);
+        width: 24px;
+        height: 24px;
+        margin-top: 15px;
+        margin-left: 18px;
+      }
+
+      .profile__add-button {
+        background-image: url(./images/Add\ Button.png);
+        width: 150px;
+        height: 50px;
+      }
+
+      .contain {
+        display: flex;
       }
     </style>
   </head>
   <body class="root">
     <div class="page">
       <header class="header">
-    
+        <img
+          class="header__logo"
+          src="./images/header-logo.png"
+          alt="Надписть на логотипе Mesto Russia"
+        />
+      </header>
 
+      <main class="content">
+        <section class="profile">
+          <div class="contain">
+            <img
+              class="profile__avatar"
+              src="./images/profile-avatar.jpg"
+              alt="Изображенна фото Жак-Ив Кусто в красной шапке"
+            />
+
+            <div class="profile__info">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <div class="profile__edit-button"></div>
+              <p class="profile__subtitle">Исследователь океана</p>
+            </div>
+          </div>
+          <div class="profile__add-button"></div>
+        </section>
 
         
-</body>
+
+
+        <section class="elements">
+          <div class="element">
+            <img class="element__mask" src="" alt="" />
+            <h2 class="element__heading"></h2>
+            <img class="element__like" src="" alt="" />
+          </div>
+        </section>
+
+
+
+
+      </main>
+    </div>
+  </body>
 </html>

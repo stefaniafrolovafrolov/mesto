@@ -1,5 +1,6 @@
 .header {
-  width: 880px;
-  min-height: 74px;
+  max-width: 880px;
+  padding: 45px 200px 0 200px;
+
   outline: 2px solid white;
 }

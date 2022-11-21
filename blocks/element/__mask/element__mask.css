@@ -1,0 +1,8 @@
+.element__mask {
+  display: block;
+  max-width: 282px;
+  min-height: 282px;
+  border-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}

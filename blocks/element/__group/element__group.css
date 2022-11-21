@@ -1,8 +1,7 @@
-.profile {
+.element__group {
   margin: 0;
   padding: 0;
-  max-width: 880px;
-  padding: 40px 200px 0 200px;
+  margin: 25px 15px 25px 21px;
   display: flex;
   justify-content: space-between;
   align-items: center;

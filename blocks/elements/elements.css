@@ -9,6 +9,78 @@
   row-gap: 20px;
 }
 
+@media screen and (max-width: 1180px) {
+  .elements {
+    padding: 45px 150px 0 150px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .elements {
+    padding: 45px 110px 0 110px;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .elements {
+    padding: 45px 72px 0 72px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .elements {
+    max-width: 584px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 55px 190px 0 190px;
+    
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .elements {
+    
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .elements {
+    padding: 55px 48px 0 48px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .elements {
+    justify-items: center;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 65px 179px 0 179px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .elements {
+    padding: 65px 129px 0 129px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .elements {
+    padding: 65px 79px 0 79px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .elements {
+    padding: 65px 59px 0 59px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .elements {
+    padding: 65px 47px 0 47px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .elements {
     max-width: 282px;

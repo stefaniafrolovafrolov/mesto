@@ -1,0 +1,29 @@
+.popup {
+  min-height: 740px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+  .popup {
+    width: 320px;
+    min-height: 568px;
+   
+    /*min-height: 100%;*/
+  }
+}
+
+/*@media screen and (max-width: 320px) {
+  .popup {
+    width: 320px;
+    min-height: 568px;
+   
+    /*min-height: 100%;*/
+  }
+}

@@ -6,15 +6,36 @@
   background-image: url(../../../images/Edit\ Button.svg);
   width: 24px;
   height: 24px;
-  margin-top: 15px;
-  margin-left: 18px;
+  position: absolute;
+  top: 34px;
+  right: 0;
+}
+
+/*@media screen and (max-width: 1050px) {
+  .profile__edit-button {
+   background-image: url(../../../images/Edit\ Button.png);
+    width: 18px;
+    height: 18px;
+    top: 37px;
+    right: 35px;
+  }
+}*/
+
+@media screen and (max-width: 375px) {
+  .profile__edit-button {
+    background-image: url(../../../images/Edit\ Button.png);
+    width: 18px;
+    height: 18px;
+    top: 33px;
+    right: 55px;
+  }
 }
 
 @media screen and (max-width: 320px) {
   .profile__edit-button {
     width: 18px;
     height: 18px;
-    margin-top: 10px;
-    margin-left: 10px;
+    top: 30px;
+    right: 39px;
   }
 }

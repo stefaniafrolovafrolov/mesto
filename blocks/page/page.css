@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0 auto;
   max-width: 1280px;
+  height: 100%;
   background: #000;
   font-family: "Inter", "Arial", "sans-serif";
   -moz-osx-font-smoothing: grayscale;

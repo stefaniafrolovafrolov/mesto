@@ -4,3 +4,17 @@
   max-width: 120px;
   max-height: 120px;
 }
+
+@media screen and (max-width: 680px) {
+  .profile__avatar {
+    max-width: 240px;
+    max-height: 240px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .profile__avatar {
+    max-width: 120px;
+    max-height: 120px;
+  }
+}

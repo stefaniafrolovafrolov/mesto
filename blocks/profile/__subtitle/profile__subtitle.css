@@ -1,7 +1,6 @@
 .profile__subtitle {
   margin: 0;
   padding: 0;
-  height: 18px;
   max-width: 336px;
   font-family: "Inter", "Arial", "sans-serif";
   font-weight: 400;
@@ -10,12 +9,20 @@
   color: #fff;
 }
 
+
+
+@media screen and (max-width: 768px) {
+  .profile__subtitle {
+    max-width: 282px;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .profile__subtitle {
-    height: 14px;
-    max-width: 282px;
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
   }
 }

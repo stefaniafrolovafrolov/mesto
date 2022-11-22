@@ -1,0 +1,71 @@
+.popup__close {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 160px;
+  left: 863px;
+  border: none;
+  background-color: transparent;
+  background-image: url(../../../images/Close\ Icon.png);
+}
+
+@media screen and (max-width: 1180px) {
+  .popup__close {
+    left: 803px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .popup__close {
+    left: 763px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .popup__close {
+    left: 733px;
+  }
+}
+
+@media screen and (max-width: 924px) {
+  .popup__close {
+    left: 680px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .popup__close {
+    left: 640px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .popup__close {
+    left: 600px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .popup__close {
+    left: 550px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .popup__close {
+    left: 280px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup__close {
+    align-items: flex-start;
+    background-image: url(../../../images/Close\Icon\\(1\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    top: 87px;
+    left: 281px;
+  }
+}

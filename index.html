@@ -10,187 +10,34 @@
     <link rel="shortcut icon" href="./images/logo-icon.png" />
     <title>Проектная работа Maestro</title>
     <style>
-      .popup {
-        
-        min-height: 740px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-      }
-
-      .popup_opened {
-       display: none;
-      }
-
-
-.popup__close {
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  top: 160px;
-  left: 863px;
-border: none;
-  background-color: transparent;
-background-image: url(./images/Close\ Icon.png);
+      
+a {
+ background-size: cover;
 }
+      
 
 
-      .popup__container {
-       padding-bottom: 10px;
-        display: flex;
-        flex-direction: column;
-        /*justify-content: space-around;*/
-       /* justify-content: center;*/
-        width: 430px;
-       height: 330px;
-       
-        background: #fff;
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-        border-radius: 10px;
-      }
-      .popup__title {
-        margin: 0;
-        margin-top: 34px;
-        margin-bottom: 54px;
-        margin-left: 36px;
-      /* padding: 35px 64px 54px 35px;*/
-        max-width: 330px;
-        font-family: "Inter";
-        font-weight: 900;
-        font-size: 24px;
-        line-height: 29px;
-        color: #000000;
-      }
-      /*.close {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-      }*/
 
-      .popup__input {
-        margin: 0;
-        padding: 0;
-        width: 358px;
-        /*height: 14px;*/
-     /* margin: 0 36px;*//*57*/
-        align-self: center;
-       /* opacity: 0.2;*/
-        border: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-        margin-bottom: 29px;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        color: #000000;
-        white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  
-}
+
+
+      
+      
+     
+
+      
   
 
-      .popup__input:last-of-type {
-        margin-bottom: 0px;
-      }
+     
 
+      
 
-      .popup__input:hover {
-        cursor: pointer;
-       
-      }
+      
 
+     
 
-
-      /*.popup__input:placeholderinput::placeholder {
-        outline: none;
-        /*max-width: 358px;*/
-       /* font-family: "Inter";
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        color: #000000;
-      }*/
-
-      input[type="text"] {
-        height: 14px;
-        width: 358px;
-      }
-
-      input[placeholder]  {
-        text-overflow:ellipsis;
-        /*white-space: nowrap;
-        overflow: hidden;*/
-        padding-right: 20px;
-         
-        outline: none;
-         font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        color: #000000;
-       
-        cursor: pointer;
-        padding-bottom: 13px;
-}
-
-
-/*input[placeholder]::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.3s ease;}
-input[placeholder]::-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.3s ease;}
-input[placeholder]:-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.3s ease;}
-input[placeholder]:-ms-input-placeholder            {text-indent: 0px;   transition: text-indent 0.3s ease;}
-input[placeholder]:focus::-webkit-input-placeholder {text-indent: 500px; transition: text-indent 0.3s ease;}
-input[placeholder]:focus::-moz-placeholder          {text-indent: 500px; transition: text-indent 0.3s ease;}
-input[placeholder]:focus:-moz-placeholder           {text-indent: 500px; transition: text-indent 0.3s ease;}
-input[placeholder]:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-indent 0.3s ease;}
-
-*/
-
-      /*input[placeholder]:focus::-webkit-input-placeholder {color: transparent}
-      input[placeholder]:focus::-moz-placeholder          {color: transparent}
-      input[placeholder]:focus:-moz-placeholder           {color: transparent}
-      input[placeholder]:focus:-ms-input-placeholder      {color: transparent}*/
-
-      /*input[type="text"] { 
-  
     
-    color: black; /* Цвет текста */
-   }
-  /* input[type="text"]::-moz-placeholder {
-    color: black; /* Цвет подсказывающего текста */
-   }
-  /* input[type="text"]::-webkit-input-placeholder { color: black; }
-   input[type="text"]:-ms-input-placeholder { color: black; }
-   input[type="text"]::-ms-input-placeholder { color: black; }
-   input[type="text"]::placeholder { color: black; } */
 
-      .popup__button {
-        margin: 0;
-        padding: 0;
-        border: none;
-        width: 358px;
-        height: 50px;
-        background: #000000;
-        border-radius: 2px;
-        padding: 14px 0 14px 0;
-        font-family: "Inter";
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 22px;
-        text-align: center;
-        align-self: center;
-        color: #ffffff;
-      margin-top: 48px;
-       /*margin-bottom: 37px;*/
 
-      }
     </style>
   </head>
   <body class="root">
@@ -245,7 +92,7 @@ input[placeholder]:focus:-ms-input-placeholder      {text-indent: 500px; transit
               placeholder="О себе"
             />
 
-            <button class="popup__button" @click="processed()">
+            <button class="popup__button"">
               Cохранить
             </button>
           </form>

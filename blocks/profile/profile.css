@@ -8,6 +8,34 @@
   align-items: center;
 }
 
+@media screen and (max-width: 1050px) {
+  .profile {
+   /*max-width: 724px;*/
+   /* padding: 40px 150px 0 150px;*/
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile {
+    max-width: 568px;
+    padding: 40px 100px 0 100px;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .profile {
+    padding: 40px 37px 0 37px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .profile {
+    padding: 40px 17px 0 17px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .profile {
     max-width: 282px;

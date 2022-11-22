@@ -1,14 +1,28 @@
 .profile__title {
   margin: 0;
   padding: 0;
-  height: 39px;
   max-width: 294px;
   font-family: "Inter", "Arial", "sans-serif";
   font-weight: 500;
   font-size: 42px;
   line-height: 48px;
   color: #fff;
-  padding-bottom: 4px;
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__title {
+    font-size: 37px;
+    line-height: 42px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .profile__title {
+    font-size: 30px;
+    line-height: 36px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -16,6 +30,7 @@
     font-size: 27px;
     line-height: 33px;
     max-width: 189px;
-    height: 26px;
+    padding-bottom: 8px;
+    align-self: center;
   }
 }

@@ -3,6 +3,26 @@
   padding: 45px 200px 0 200px;
 }
 
+@media screen and (max-width: 1024px) {
+  .header {
+    max-width: 928px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    max-width: 520px;
+    padding: 28px 124px 0 124px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    max-width: 320px;
+    padding: 28px 40px 0 40px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .header {
     max-width: 320px;

@@ -3,3 +3,10 @@
   padding: 0;
   display: flex;
 }
+
+@media screen and (max-width: 320px) {
+  .profile__container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

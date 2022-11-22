@@ -2,3 +2,11 @@
   max-width: 880px;
   padding: 45px 200px 0 200px;
 }
+
+@media screen and (max-width: 320px) {
+  .header {
+    max-width: 320px;
+    padding: 0;
+    padding-top: 28px;
+  }
+}

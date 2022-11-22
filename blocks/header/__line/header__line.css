@@ -7,3 +7,9 @@
   background-color: #545454; /* Цвет линии для браузера Firefox и Opera */
   height: 1px; /* Толщина линии */
 }
+
+@media screen and (max-width: 320px) {
+  .header__line {
+    max-width: 100%;
+  }
+}

@@ -11,15 +11,23 @@
   right: 0;
 }
 
-/*@media screen and (max-width: 1050px) {
+@media screen and (max-width: 500px) {
   .profile__edit-button {
-   background-image: url(../../../images/Edit\ Button.png);
-    width: 18px;
-    height: 18px;
-    top: 37px;
-    right: 35px;
+    right: -30px;
   }
-}*/
+}
+
+@media screen and (max-width: 455px) {
+  .profile__edit-button {
+    right: -60px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .profile__edit-button {
+    right: 30px;
+  }
+}
 
 @media screen and (max-width: 375px) {
   .profile__edit-button {
@@ -31,10 +39,14 @@
   }
 }
 
+@media screen and (max-width: 360px) {
+  .profile__edit-button {
+    right: 20px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .profile__edit-button {
-    width: 18px;
-    height: 18px;
     top: 30px;
     right: 39px;
   }

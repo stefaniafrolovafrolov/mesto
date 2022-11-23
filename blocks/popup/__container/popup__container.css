@@ -9,17 +9,15 @@
   border-radius: 10px;
 }
 
-/*@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .popup__container {
-    width: 282px;
+    width: 300px;
     height: 314px;
   }
-}*/
-
+}
 
 @media screen and (max-width: 320px) {
   .popup__container {
     width: 282px;
-    height: 314px;
   }
 }

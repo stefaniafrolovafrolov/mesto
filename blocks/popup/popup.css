@@ -1,5 +1,10 @@
 .popup {
-  min-height: 740px;
+  display: none;
+}
+
+
+/*.popup {
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,18 +17,7 @@
 
 @media screen and (max-width: 500px) {
   .popup {
-    width: 320px;
-    min-height: 568px;
-   
-    /*min-height: 100%;*/
+    width: 100%;
   }
 }
-
-/*@media screen and (max-width: 320px) {
-  .popup {
-    width: 320px;
-    min-height: 568px;
-   
-    /*min-height: 100%;*/
-  }
-}
+*/

@@ -11,25 +11,25 @@
 
 @media screen and (max-width: 768px) {
   .footer {
-    padding-left:92px;
+    padding-left: 92px;
   }
 }
 
 @media screen and (max-width: 680px) {
   .footer {
-    padding-left:48px;
+    padding-left: 48px;
   }
 }
 
 @media screen and (max-width: 440px) {
   .footer {
-    padding-left:79px;
+    padding-left: 79px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .footer {
-    padding-left:59px;
+    padding-left: 59px;
   }
 }
 

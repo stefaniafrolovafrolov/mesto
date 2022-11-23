@@ -12,6 +12,7 @@
 
 @media screen and (max-width: 680px) {
   .profile__container {
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }

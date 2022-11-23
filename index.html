@@ -9,7 +9,12 @@
     <link rel="stylesheet" href="./pages/index.css" />
     <link rel="shortcut icon" href="./images/logo-icon.png" />
     <title>Проектная работа Maestro</title>
-   
+    <style>
+
+      a {
+        
+      }
+    </style>
   </head>
   <body class="root">
     <div class="page">
@@ -34,40 +39,39 @@
 
             <div class="profile__info">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button"></button>
+              <button class="profile__edit-button" id="myBtn"></button>
               <p class="profile__subtitle">Исследователь океана</p>
             </div>
           </div>
           <button class="profile__add-button"></button>
         </section>
 
+       
 
+        <div class="popup popup_opened" id="myModal">
+          <button class="popup__close" type="button" ></button>
+          <div class="popup__container">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form" name="editForm">
+              <fieldset class="popup__fieldset" id="form">
+                <input
+                  class="popup__input"
+                  name="formInfo"
+                  type="text"
+                  placeholder="Имя"
+                />
 
-
-
-       <div class="popup popup_opened">
-        <button class="popup__close" type=“button”></button>
-          <form class="popup__container" name="Form" >
-           
-          <h2 class="popup__title">Редактировать профиль</h2>
-            <input
-              class="popup__input"
-              type="text"
-              
-              placeholder="Имя"
-            />
-            <input
-              class="popup__input"
-              type="text"
-             
-              placeholder="О себе"
-            />
-
-            <button class="popup__button" type="submit">
-              Cохранить
-            </button>
-          </form>
-       </div>
+                <input
+                  class="popup__input"
+                  name="formData"
+                  type="text"
+                  placeholder="О себе"
+                />
+              </fieldset>
+              <button class="popup__save" type="submit">Сохранить</button>
+            </form>
+          </div>
+        </div>
 
 
 
@@ -81,7 +85,7 @@
             />
             <div class="element__group">
               <h2 class="element__title">Карачаевск</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button element__like-button_active"></button>
             </div>
           </div>
 
@@ -93,7 +97,7 @@
             />
             <div class="element__group">
               <h2 class="element__title">Гора Эльбрус</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button element__like-button_active"></button>
             </div>
           </div>
 
@@ -105,7 +109,7 @@
             />
             <div class="element__group">
               <h2 class="element__title">Домбай</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button element__like-button_active"></button>
             </div>
           </div>
 
@@ -117,7 +121,7 @@
             />
             <div class="element__group">
               <h2 class="element__title">Горы в Грузии</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button element__like-button_active"></button>
             </div>
           </div>
 
@@ -129,7 +133,7 @@
             />
             <div class="element__group">
               <h2 class="element__title">Ереван</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button element__like-button_active"></button>
             </div>
           </div>
           <div class="element">
@@ -140,7 +144,7 @@
             />
             <div class="element__group">
               <h2 class="element__title">Алтай</h2>
-              <button class="element__like-button"></button>
+              <button class="element__like-button element__like-button_active"></button>
             </div>
           </div>
         </section>
@@ -150,5 +154,6 @@
         <p class="footer__copyright">&copy; 2022. Фролов Вадим</p>
       </footer>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>

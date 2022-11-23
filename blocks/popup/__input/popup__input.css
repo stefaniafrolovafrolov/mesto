@@ -1,11 +1,11 @@
 .popup__input {
   margin: 0;
   padding: 0;
-  width: 358px;
+  width: 348px;
   align-self: center;
+  margin-left: 22px;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -17,14 +17,12 @@
   outline: none;
   cursor: pointer;
   padding-bottom: 13px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .popup__input:last-of-type {
   margin-bottom: 0px;
-}
-
-.popup__input:hover {
-  cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {

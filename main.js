@@ -25,8 +25,8 @@ document.querySelector(".popup__save").onclick = myFanc
 function formSubmitHandler(evt) {
   evt.preventDefault()
 
-  let nameInput = document.querySelector(".form__input_type_name").value
-  let jobInput = document.querySelector(".form__input_type_job").value
+  let nameInput = document.querySelector(".popup__input-name").value
+  let jobInput = document.querySelector(".popup__input-job").value
   document.querySelector(".profile__title").textContent = nameInput
   document.querySelector(".profile__subtitle").textContent = jobInput
 }

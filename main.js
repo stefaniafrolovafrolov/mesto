@@ -1,40 +1,38 @@
-/*Написал код для модального окна по id и классу. Не стал делать
- удаление доп класса('.popup') в html, так как этот вариант получился оптимизированней. И + дополнительно
- сделал закрытие модального окна по клику на дисплей вне формы. */
+let openPopup = document.querySelectorAll(
+  ".profile__edit-button"
+) /*кнопка открытия попапа*/
+let closePopup = (document.querySelector(".popup__close").onclick =
+  close) /*кнопка закрытия попапа*/
+let popup = document.querySelector(".popup") /* попап */
+let popupActive =
+  document.querySelector(".popup_opened") /* попап дисплай ноне*/
 
-let modal = document.getElementById("myModal");
-let button = document.getElementById("myBtn");
-let buttonDel = document.getElementsByClassName("popup__close")[0];
+openPopup.forEach((button) => {
+  // Перебираем все кнопки
+  button.addEventListener("click", (e) => {
+    // Для каждой вешаем обработчик событий на клик
+    e.preventDefault() // Предотвращаем дефолтное поведение браузера
+    popup.classList.remove("popup_opened") // Удаляем класс 'popup' который скрывает попап
+    popupActive.classList.add("popup") // И делаем активным класс с нашим попапом
+  })
+})
 
-button.onclick = function () {
-  modal.style.display = "flex"
+function close() {
+  popup.classList.add("popup_opened")
 }
 
-buttonDel.onclick = function () {
-  modal.style.display = "none"
+document.querySelector(".popup__save").onclick = myFanc
+function formSubmitHandler(evt) {
+  evt.preventDefault()
+
+  let nameInput = document.querySelector(".form__input_type_name").value
+  let jobInput = document.querySelector(".form__input_type_job").value
+  document.querySelector(".profile__title").textContent = nameInput
+  document.querySelector(".profile__subtitle").textContent = jobInput
 }
 
-window.onclick = function (event) {  
-  if (event.target == modal) {
-    modal.style.display = "none"
-  }
+function myFanc() {
+  let formElement = document.querySelector("#popup__form")
+  formElement.addEventListener("submit", formSubmitHandler)
+  popup.style.display = "none"
 }
-
-let formElement = document.querySelector(".popup__form"); 
-const nameInput = document.querySelector(".form__input_type_name");
-const jobInput = document.querySelector(".form__input_type_job");
-function formSubmitHandler (evt) {
-    evt.preventDefault();
-
-    nameInput.value = "";
-    jobInput.value = "";
-    nameInput.textContent = "";
-
-
-
-}
-
-
-formElement.addEventListener('submit', formSubmitHandler); 
-console.log(nameInput.value);
-console.log(jobInput.value);

@@ -17,7 +17,7 @@
   transition: 0.5s ease-in-out;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 515px) {
   .profile__edit-button {
     right: -30px;
   }

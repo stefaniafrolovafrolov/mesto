@@ -3,30 +3,29 @@ let openPopup = document.querySelectorAll(
 ) /*кнопка открытия попапа*/
 let closePopup = (document.querySelector(".popup__close").onclick =
   close) /*кнопка закрытия попапа*/
-let popup = document.querySelector(".popup") /* попап */
+let popup = document.querySelector(".popup") /* попап дисплай ноне*/
 let popupActive =
-  document.querySelector(".popup_opened") /* попап дисплай ноне*/
+  document.querySelector(".popup_opened") /* попап дисплай флекс*/
 
 openPopup.forEach((button) => {
   // Перебираем все кнопки
   button.addEventListener("click", (e) => {
     // Для каждой вешаем обработчик событий на клик
     e.preventDefault() // Предотвращаем дефолтное поведение браузера
-    popup.classList.remove("popup_opened") // Удаляем класс 'popup' который скрывает попап
-    popupActive.classList.add("popup") // И делаем активным класс с нашим попапом
+    popup.style.display = "flex" /*меняю состояние дисплей с нон на флекс*/
   })
 })
 
 function close() {
-  popup.classList.add("popup_opened")
+  popup.style.display = "none"
 }
 
 document.querySelector(".popup__save").onclick = myFanc
 function formSubmitHandler(evt) {
   evt.preventDefault()
 
-  let nameInput = document.querySelector(".popup__input-name").value
-  let jobInput = document.querySelector(".popup__input-job").value
+  let nameInput = document.querySelector(".popup__input_name").value
+  let jobInput = document.querySelector(".popup__input_job").value
   document.querySelector(".profile__title").textContent = nameInput
   document.querySelector(".profile__subtitle").textContent = jobInput
 }

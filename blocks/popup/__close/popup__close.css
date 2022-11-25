@@ -2,7 +2,7 @@
   width: 32px;
   height: 32px;
   position: absolute;
-  top: 140px;
+  top: 185px;
   left: 860px;
   border: none;
   background-color: transparent;
@@ -62,8 +62,7 @@
     left: 280px;
   }
 }
-
-@media screen and (max-width: 500px) {
+*/ @media screen and (max-width: 500px) {
   .popup__close {
     align-items: flex-start;
     background-image: url(../../../images/Close\Icon\\(1\).png);
@@ -76,7 +75,7 @@
   }
 }
 
-@media screen and (max-width: 475px) {
+/*@media screen and (max-width: 475px) {
   .popup__close {
     top: 160px;
     left: 220px;
@@ -87,7 +86,7 @@
   .popup__close {
     left: 180px;
   }
-}
+}*/
 
 @media screen and (max-width: 320px) {
   .popup__close {

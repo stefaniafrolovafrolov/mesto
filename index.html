@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./pages/index.css" >
     <link rel="shortcut icon" href="./images/logo-icon.png" >
     <title>Проектная работа Mesto</title>
+    
   </head>
   <body class="root">
     <div class="page">
@@ -18,7 +19,7 @@
           src="./images/header-logo.png"
           alt="Надписть на логотипе Mesto Russia"
           >
-        <hr class="header__line" >
+        
       </header>
       <main class="content">
         <section class="profile">
@@ -36,21 +37,22 @@
           </div>
           <button class="profile__add-button"></button>
         </section>
-        <div class="popup popup_opened" id="myModal">
-          <button class="popup__close" type="button" ></button>
+        <div class="popup" id="myModal">
+         
           <div class="popup__container">
+            <button class="popup__close" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form" name="editForm" id="popup__form">
               <fieldset class="popup__fieldset" id="form">
                 <input
-                  class="popup__input popup__input-name"
+                  class="popup__input popup__input_name"
                   name="nameInput"
                   type="text"
                   placeholder="Имя"
                   value="Жак-Ив Кусто"
                   >
                 <input
-                  class="popup__input popup__input-job"
+                  class="popup__input popup__input_job"
                   name="jobInput"
                   type="text"
                   placeholder="О себе"
@@ -70,7 +72,7 @@
               >
             <div class="element__group">
               <h2 class="element__title">Карачаевск</h2>
-              <button class="element__like-button element__like-button_active"></button>
+              <button class="element__like-button"></button>
             </div>
           </div>
           <div class="element">
@@ -81,7 +83,7 @@
               >
             <div class="element__group">
               <h2 class="element__title">Гора Эльбрус</h2>
-              <button class="element__like-button element__like-button_active"></button>
+              <button class="element__like-button"></button>
             </div>
           </div>
           <div class="element">
@@ -92,7 +94,7 @@
               >
             <div class="element__group">
               <h2 class="element__title">Домбай</h2>
-              <button class="element__like-button element__like-button_active"></button>
+              <button class="element__like-button"></button>
             </div>
           </div>
           <div class="element">
@@ -103,7 +105,7 @@
               >
             <div class="element__group">
               <h2 class="element__title">Горы в Грузии</h2>
-              <button class="element__like-button element__like-button_active"></button>
+              <button class="element__like-button"></button>
             </div>
           </div>
           <div class="element">
@@ -114,7 +116,7 @@
               >
             <div class="element__group">
               <h2 class="element__title">Ереван</h2>
-              <button class="element__like-button element__like-button_active"></button>
+              <button class="element__like-button"></button>
             </div>
           </div>
           <div class="element">
@@ -125,7 +127,7 @@
               >
             <div class="element__group">
               <h2 class="element__title">Алтай</h2>
-              <button class="element__like-button element__like-button_active"></button>
+              <button class="element__like-button"></button>
             </div>
           </div>
         </section>
@@ -134,6 +136,6 @@
         <p class="footer__copyright">&copy; 2022. Фролов Вадим</p>
       </footer>
     </div>
-    <script src="./main.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

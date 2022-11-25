@@ -21,7 +21,5 @@
 @media screen and (max-width: 320px) {
   .profile__container {
     padding: 0;
-    flex-direction: column;
-    align-items: center;
   }
 }

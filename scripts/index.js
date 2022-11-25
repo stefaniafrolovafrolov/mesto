@@ -1,37 +1,70 @@
-let openPopup = document.querySelectorAll(
-  ".profile__edit-button"
-) /*кнопка открытия попапа*/
-let closePopup = (document.querySelector(".popup__close").onclick =
-  close) /*кнопка закрытия попапа*/
-let popup = document.querySelector(".popup") /* попап дисплай ноне*/
-let popupActive =
-  document.querySelector(".popup_opened") /* попап дисплай флекс*/
+let editBtn = document.querySelector(".profile__edit-button");
+let closeBtn = document.querySelector(".popup__close");
+let popup = document.querySelector(".popup");
+let saveBtn = document.querySelector(".popup__save");
+let nameInput = document.querySelector(".popup__input_name");
+let JobInput = document.querySelector(".popup__input_job");
 
-openPopup.forEach((button) => {
-  // Перебираем все кнопки
-  button.addEventListener("click", (e) => {
-    // Для каждой вешаем обработчик событий на клик
-    e.preventDefault() // Предотвращаем дефолтное поведение браузера
-    popup.style.display = "flex" /*меняю состояние дисплей с нон на флекс*/
-  })
-})
 
-function close() {
+function openPopup() {
+  popup.classList.add("popup_opened");
+}
+
+function closePopup() {
+  popup.classList.remove("popup_opened");
+
+}
+
+function popupSave() {
+  let formElement = document.querySelector("#popup__form");
+  formElement.addEventListener("submit", formSubmitHandler);
   popup.style.display = "none"
 }
 
-document.querySelector(".popup__save").onclick = myFanc
 function formSubmitHandler(evt) {
   evt.preventDefault()
-
-  let nameInput = document.querySelector(".popup__input_name").value
-  let jobInput = document.querySelector(".popup__input_job").value
-  document.querySelector(".profile__title").textContent = nameInput
-  document.querySelector(".profile__subtitle").textContent = jobInput
+  let nameInput = document.querySelector(".popup__input_name").value;
+  let jobInput = document.querySelector(".popup__input_job").value;
+  document.querySelector(".profile__title").textContent = nameInput;
+  document.querySelector(".profile__subtitle").textContent = jobInput;
 }
 
-function myFanc() {
-  let formElement = document.querySelector("#popup__form")
-  formElement.addEventListener("submit", formSubmitHandler)
-  popup.style.display = "none"
+
+saveBtn.addEventListener("click", popupSave);
+editBtn.addEventListener("click", openPopup);
+closeBtn.addEventListener("click", closePopup);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function openPopup() {
+  popup.classList.add("popup_opened");
+  
+ 
 }
+
+function closePopup() {
+  popup.classList.remove("popup_opened");
+ 
+}
+
+function sendForm(evt) {
+  evt.preventDefault();
+ 
+  closePopup();
+ 
+}
+
+editBtn.addEventListener("click", openPopup);
+closeButton.addEventListener("click", closePopup);
+saveButton.addEventListener("submit", sendForm);*/

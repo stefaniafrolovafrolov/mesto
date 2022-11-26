@@ -7,7 +7,8 @@
   background: rgba(0, 0, 0, 0.5);
   align-items: center;
   justify-content: center;
-  display: none;
+ /* display: none;*/
+ display: flex;
 }
 
 @media screen and (max-width: 500px) {

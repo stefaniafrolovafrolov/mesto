@@ -1,70 +1,29 @@
-let editBtn = document.querySelector(".profile__edit-button");
-let closeBtn = document.querySelector(".popup__close");
-let popup = document.querySelector(".popup");
-let saveBtn = document.querySelector(".popup__save");
-let nameInput = document.querySelector(".popup__input_name");
-let JobInput = document.querySelector(".popup__input_job");
-
+let formElement = document.querySelector(".popup__form")
+let editBtn = document.querySelector(".profile__edit-button")
+let closeBtn = document.querySelector(".popup__close")
+let popup = document.querySelector(".popup")
+let nameInput = document.querySelector(".popup__input_type_name")
+let jobInput = document.querySelector(".popup__input_type_job")
+let profTitle = document.querySelector(".profile__title")
+let profParag = document.querySelector(".profile__subtitle")
 
 function openPopup() {
-  popup.classList.add("popup_opened");
+  popup.classList.add("popup_opened")
+  nameInput.value = profTitle.textContent
+  jobInput.value = profParag.textContent
 }
 
 function closePopup() {
-  popup.classList.remove("popup_opened");
-
-}
-
-function popupSave() {
-  let formElement = document.querySelector("#popup__form");
-  formElement.addEventListener("submit", formSubmitHandler);
-  popup.style.display = "none"
-}
-
-function formSubmitHandler(evt) {
-  evt.preventDefault()
-  let nameInput = document.querySelector(".popup__input_name").value;
-  let jobInput = document.querySelector(".popup__input_job").value;
-  document.querySelector(".profile__title").textContent = nameInput;
-  document.querySelector(".profile__subtitle").textContent = jobInput;
-}
-
-
-saveBtn.addEventListener("click", popupSave);
-editBtn.addEventListener("click", openPopup);
-closeBtn.addEventListener("click", closePopup);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*function openPopup() {
-  popup.classList.add("popup_opened");
-  
- 
-}
-
-function closePopup() {
-  popup.classList.remove("popup_opened");
- 
+  popup.classList.remove("popup_opened")
 }
 
 function sendForm(evt) {
-  evt.preventDefault();
- 
-  closePopup();
- 
+  evt.preventDefault()
+  profTitle.textContent = nameInput.value
+  profParag.textContent = jobInput.value
+  closePopup()
 }
 
-editBtn.addEventListener("click", openPopup);
-closeButton.addEventListener("click", closePopup);
-saveButton.addEventListener("submit", sendForm);*/
+editBtn.addEventListener("click", openPopup)
+closeBtn.addEventListener("click", closePopup)
+formElement.addEventListener("submit", sendForm)

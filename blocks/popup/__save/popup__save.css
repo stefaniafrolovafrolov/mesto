@@ -2,10 +2,9 @@
   margin: 0;
   border: none;
   width: 358px;
-  height: 50px;
   background: #000;
   border-radius: 2px;
-  padding: 14px 0 14px 0;
+  padding: 14px 0 18px 0;
   font-family: "Inter";
   font-weight: 400;
   font-size: 18px;
@@ -13,8 +12,9 @@
   text-align: center;
   align-self: center;
   color: #fff;
-  margin-top: 40px;
+  margin-top: 48px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .popup__save:hover {

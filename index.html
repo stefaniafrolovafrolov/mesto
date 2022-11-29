@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="./pages/index.css" >
     <link rel="shortcut icon" href="./images/logo-icon.png" >
     <title>Проектная работа Mesto</title>
+    <style>
+
+
+
+
+    </style>
   </head>
   <body class="root">
     <div class="page">
@@ -35,6 +41,10 @@
           </div>
           <button class="profile__add-button" type="button"></button>
         </section>
+
+
+
+
         <div class="popup">
           <div class="popup__container">
             <button class="popup__close" type="button"></button>
@@ -45,21 +55,67 @@
                   class="popup__input popup__input_type_name"
                   name="nameInput"
                   type="text"
-                  placeholder="Название"
+                  placeholder="Имя"
                   >
                 <input
                   class="popup__input popup__input_type_job"
                   name="jobInput"
                   type="text"
-                  placeholder="Ссылка на картинку"
+                  placeholder="О себе"
                   >
               </fieldset>
               <button class="popup__save" type="submit">Сохранить</button>
             </form>
           </div>
         </div>
+
+
+
+
+
+
+        <div class="popup-new">
+          <div class="popup__container-new">
+            <button class="popup__close-new" type="button"></button>
+            <h2 class="popup__title-new">Новое место</h2>
+            <form class="popup__form-new" name="NewForm">
+              <fieldset class="popup__fieldset-new" id="NewForm">
+                <input
+                  class="popup__input-new popup__input-new_type_name"
+                  name="nameInputNew"
+                  type="text"
+                  placeholder="Название"
+                  >
+                <input
+                  class="popup__input-new popup__input-new_type_job"
+                  name="jobInputNew"
+                  type="text"
+                  placeholder="Ссылка на картинку"
+                  >
+              </fieldset>
+              <button class="popup__save-new" type="submit">Создать</button>
+            </form>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
         <section class="elements">
-        <div class="element">
+      <div class="element">
+        <button
+        class="element__trash" 
+       type="button"
+        ></button>
             <img
               class="element__mask"
               src="./images/Карачаевск.jpg"
@@ -71,6 +127,10 @@
             </div>
           </div>
           <div class="element">
+            <button
+        class="element__trash" 
+       type="button"
+        ></button>
             <img
               class="element__mask"
               src="./images/Эльбрус.jpg"
@@ -82,6 +142,10 @@
             </div>
           </div>
           <div class="element">
+            <button
+        class="element__trash" 
+       type="button"
+        ></button>
             <img
               class="element__mask"
               src="./images/Домбай.jpg"
@@ -93,6 +157,10 @@
             </div>
           </div>
           <div class="element">
+            <button
+            class="element__trash" 
+           type="button"
+            ></button>
             <img
               class="element__mask"
               src="./images/Грузия.jpg"
@@ -104,6 +172,10 @@
             </div>
           </div>
           <div class="element">
+            <button
+            class="element__trash" 
+           type="button"
+            ></button>
             <img
               class="element__mask"
               src="./images/Ереван.jpg"
@@ -115,6 +187,10 @@
             </div>
           </div>
           <div class="element">
+            <button
+        class="element__trash" 
+       type="button"
+        ></button>
             <img
               class="element__mask"
               src="./images/Алтай.jpg"

@@ -1,0 +1,6 @@
+.popup__form-new {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  

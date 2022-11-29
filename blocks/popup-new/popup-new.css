@@ -1,4 +1,4 @@
-.popup {
+.popup-new {
   height: 100%;
   position: fixed;
   top: 0;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .popup {
+  .popup-new {
     width: 100%;
   }
 }

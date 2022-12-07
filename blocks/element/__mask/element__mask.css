@@ -6,4 +6,5 @@
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
   background-size: cover;
+  object-fit: cover;
 }

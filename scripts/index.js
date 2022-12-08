@@ -11,14 +11,16 @@ const formElementNew = document.querySelector(".popup__form-new")
 const profAddBtn = document.querySelector(".profile__add-button")
 const popupNew = document.querySelector(".popup-new")
 const closeNewBtn = document.querySelector(".popup__close-new")
+const popupSaveNew = document.querySelector(".popup__save-new") 
 
-let nameInputNew = document.querySelector(".popup__input-new_type_name")
-let jobInputNew = document.querySelector(".popup__input-new_type_job")
+
+const nameInputNew = document.querySelector(".popup__input-new_type_name")
+const linkInputNew = document.querySelector(".popup__input-new_type_link")
 
 function openPopupNew() {
   popupNew.classList.add("popup-new_opened")
   nameInputNew.value
-  jobInputNew.value
+  linkInputNew.value
 }
 
 function closePopupNew() {
@@ -42,14 +44,7 @@ function sendForm(evt) {
   closePopup()
 }
 
-/*function sendFormNew(evt) {
-  evt.preventDefault()
-  div.placeInfo = nameInputNew.value
-  div.placeInfo = jobInputNew.value
-  closePopupNew()
-}
 
-formElementNew.addEventListener("submit", sendFormNew)*/
 
 closeNewBtn.addEventListener("click", closePopupNew)
 profAddBtn.addEventListener("click", openPopupNew)
@@ -84,9 +79,10 @@ const initialCards = [
     name: "Байкал",
     link: "https://images.unsplash.com/photo-1614000531712-0cb05134239c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fCVEMCU5MSVEMCVCMCVEMCVCOSVEMCVCQSVEMCVCMCVEMCVCQnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
   },
+
 ]
 
-let sectionElement = document.querySelector(".elements")
+const sectionElement = document.querySelector(".elements")
 
 const template = document.querySelector("#element-template").content
 
@@ -96,7 +92,7 @@ const btnTrash = document.createElement("button")
 btnTrash.classList.add("element__trash")
 const image = document.createElement("img")
 image.classList.add("element__mask")
-image.src = ""
+image.src = "#"
 image.alt = ""
 const divGroup = document.createElement("div")
 divGroup.classList.add("element__group")
@@ -125,7 +121,7 @@ function render() {
 }
 
 function renderCard({ name, link }) {
-  let elemTemplateElem = template.querySelector(".element").cloneNode(true)
+ let elemTemplateElem = template.querySelector(".element").cloneNode(true)
   elemTemplateElem.querySelector(".element__title").textContent = name
   elemTemplateElem.querySelector(".element__mask").src = link
   initialCardsList.append(elemTemplateElem)
@@ -133,6 +129,8 @@ function renderCard({ name, link }) {
 
 render()
 
+
+//фунция поставить и снять лайк
 document.body.onload = function () {
   let likeBtn = document.getElementsByClassName("element__like-button")
   if (likeBtn)
@@ -155,39 +153,16 @@ document.body.onload = function () {
 
 function sendFormNew(evt) {
   evt.preventDefault()
-  div.placeInfo = nameInputNew.value
-  div.placeInfo = jobInputNew.value
-
-  let addElem = (name, link) => {
-return div
-  }
-
-
-  closePopupNew()
+  
+closePopupNew()
 }
+
+
+
 console.log(formElementNew)
 formElementNew.addEventListener("submit", sendFormNew)
 
 
-window.onclick = function() {
-  let form = document.querySelector(".popup__form-new");
-  let addElem = (text, src) => {
-      /*let div = document.createElement("div");
-      let h2 = document.createElement("h2");
-      let img = document.createElement("img");
-      img.src = src;
-      div.append(img);
-      h2.textContent = text;*/
-      initialCardsList.append(div);
-      return div;
-  }
-  form.onsubmit = () => {
-      let name = document.querySelector(".popup__input-new_type_name");
-              let image = document.querySelector(".popup__input-new_type_job");
-              document.body.append(addElem(name.value, image.value));
-              return false;
-  }
-}
 
 
 
@@ -196,52 +171,3 @@ window.onclick = function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const initialCardsList = document.querySelector(".elements")
-const elemTemplate = document.querySelector("#element-template").content
-
-const placeInfo = initialCards.map(function (item) {
-  return {
-    name: item.name,
-    link: item.link
-  };
-});
-
-function render() {
-  placeInfo.forEach(renderCard);
-}
-
-function renderCard({ name, link }) {
-  let elemTemplateElem = elemTemplate.querySelector(".element").cloneNode(true);
-  elemTemplateElem.querySelector(".element__title").textContent = name;
-  elemTemplateElem.querySelector(".element__mask").src = link;
-  
-  initialCardsList.appendChild(btnTrash);
-  initialCardsList.append(elemTemplateElem);
- 
-
-  
-}
-
-render();
-
-function deleteCards() {
-  elemTemplate.remove() 
-  console.log(btnTrash.parentElement)
-}
-
-btnTrash.addEventListener("click", deleteCards)*/

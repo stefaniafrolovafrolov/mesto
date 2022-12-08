@@ -32,13 +32,13 @@ display: flex;
 
 .image-popup__container {
   position: relative;
- margin: 0 auto;
+  margin: 0 auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 433px;
-  height: 562px;
+  width: 75vw;
+  height: 75vh;
 }
 .image-popup__close {
   width: 32px;
@@ -73,6 +73,18 @@ color: #FFFFFF;
   </head>
   <body class="root">
     <div class="page">
+
+
+      <div class="image-popup">
+        <div class="image-popup__container">
+          <button class="image-popup__close" type="button"></button>
+      <img class="image-popup__image" src="./images/Карачаевск.jpg" alt="">
+        <p class="image-popup__parag">Карачаевск</p>
+        </div>
+        </div>
+
+
+
       <header class="header">
         <img
           class="header__logo"
@@ -106,14 +118,14 @@ color: #FFFFFF;
         </section>
 
 <template id="element-template">
-     
+     </template>
 
 
 
 
+    
 
 
-</template>
 
 
       </main>
@@ -174,13 +186,7 @@ color: #FFFFFF;
         </div>
       </div>
 
-      <div class="image-popup">
-        <div class="image-popup__container">
-          <button class="image-popup__close" type="button"></button>
-        <img class="image-popup__image" src="./images/Карачаевск.jpg" alt="">
-        <p class="image-popup__parag">Карачаевск</p>
-        </div>
-        </div>
+     
 
     </div>
     <script src="./scripts/index.js"></script>

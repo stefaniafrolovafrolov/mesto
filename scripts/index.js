@@ -17,6 +17,9 @@ const popupSaveNew = document.querySelector(".popup__save-new")
 const nameInputNew = document.querySelector(".popup__input-new_type_name")
 const linkInputNew = document.querySelector(".popup__input-new_type_link")
 
+
+
+
 function openPopupNew() {
   popupNew.classList.add("popup-new_opened")
   nameInputNew.value
@@ -90,7 +93,7 @@ const div = document.createElement("div")
 div.classList.add("element")
 const btnTrash = document.createElement("button")
 btnTrash.classList.add("element__trash")
-const image = document.createElement("img")
+let image = document.createElement("img")
 image.classList.add("element__mask")
 image.src = "#"
 image.alt = ""
@@ -151,23 +154,30 @@ document.body.onload = function () {
       }
 }
 
-function sendFormNew(evt) {
-  evt.preventDefault()
-  
-closePopupNew()
+
+
+
+
+
+let imageOpenPopup = document.querySelector(".image-popup__container")
+let imagePopup = document.querySelector(".image-popup")
+let imageClosePopup = document.querySelector(".image-popup__close")
+let elemTemplateElem = document.querySelector(".element__mask")
+
+
+function imageOpen() {
+  imagePopup.classList.add("image-popup_opened")
+  console.log()
 }
 
+function imageClose() {
+  imagePopup.classList.remove("image-popup_opened")
+  
+}
+elemTemplateElem.addEventListener("click", imageOpen)
+imageClosePopup.addEventListener("click", imageClose)
 
 
-console.log(formElementNew)
-formElementNew.addEventListener("submit", sendFormNew)
-
-
-
-
-
-
-
-
+console.log(elemTemplateElem)
 
 

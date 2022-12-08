@@ -180,4 +180,3 @@ imageClosePopup.addEventListener("click", imageClose)
 
 console.log(elemTemplateElem)
 
-

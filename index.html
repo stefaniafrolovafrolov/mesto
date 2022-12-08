@@ -11,7 +11,62 @@
     <title>Проектная работа Mesto</title>
     <style>
 
+.image-popup {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  display: none;
+  z-index: 1;
+}
 
+.image-popup_opened {
+display: flex;
+
+}
+
+.image-popup__container {
+  position: relative;
+ margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 433px;
+  height: 562px;
+}
+.image-popup__close {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  border: none;
+  background-color: transparent;
+  background-image: url(./images/Close\ Icon.png);
+  cursor: pointer;
+}
+.image-popup__image {
+ width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+.image-popup__parag {
+  margin: 0;
+  padding-top: 10px;
+  max-width: 291px;
+font-family: 'Inter';
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+color: #FFFFFF;
+}
 
 
     </style>
@@ -119,7 +174,13 @@
         </div>
       </div>
 
-
+      <div class="image-popup">
+        <div class="image-popup__container">
+          <button class="image-popup__close" type="button"></button>
+        <img class="image-popup__image" src="./images/Карачаевск.jpg" alt="">
+        <p class="image-popup__parag">Карачаевск</p>
+        </div>
+        </div>
 
     </div>
     <script src="./scripts/index.js"></script>

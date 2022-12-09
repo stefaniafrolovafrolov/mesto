@@ -60,7 +60,7 @@ formElement.addEventListener("submit", sendForm)
 const initialCards = [
   {
     name: "Архыз",
-    link: "https://images.unsplash.com/photo-1627329904799-607897b1eb60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8JUQwJTkwJUQxJTgwJUQxJTg1JUQxJThCJUQwJUI3fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    link: "https://images.unsplash.com/photo-1638989280415-d58f7340b273?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8JUQwJUIwJUQxJTgwJUQxJTg1JUQxJThCJUQwJUI3fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
   },
   {
     name: "Челябинская область",
@@ -85,12 +85,9 @@ const initialCards = [
 
 ]
 
-const sectionElement = document.querySelector(".elements")
-
-const template = document.querySelector("#element-template").content
-
 
 const initialCardsList = document.querySelector(".elements")
+const template = document.querySelector("#element-template")
 
 const placeInfo = initialCards.map(function (item) {
   return {
@@ -104,13 +101,21 @@ function render() {
 }
 
 function renderCard({ name, link }) {
- let elemTemplateElem = template.querySelector(".element").cloneNode(true)
+ let elemTemplateElem = template.content.querySelector(".element").cloneNode(true)
   elemTemplateElem.querySelector(".element__title").textContent = name
   elemTemplateElem.querySelector(".element__mask").src = link
   initialCardsList.append(elemTemplateElem)
+
+ elemTemplateElem.querySelector(".element__trash").addEventListener("click", () => {
+  elemTemplateElem.remove();
+})
+
 }
 
 render()
+
+
+
 
 
 //фунция поставить и снять лайк
@@ -125,21 +130,7 @@ document.body.onload = function () {
           this.classList.add("element__like-button_active")
         }
       }
-  //функция удаления карточек
-  const btnTrash = document.getElementsByClassName("element__trash")
-  if (btnTrash)
-    for (let i = 0; btnTrash.length > i; ++i)
-      btnTrash[i].onclick = function () {
-        this.parentElement.remove()
-      }
-
-
-      
-}
-
-
-
-
+    }
 
 
 let imageOpenPopup = document.querySelector(".image-popup__container")

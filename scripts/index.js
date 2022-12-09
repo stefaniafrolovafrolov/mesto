@@ -89,26 +89,6 @@ const sectionElement = document.querySelector(".elements")
 
 const template = document.querySelector("#element-template").content
 
-const div = document.createElement("div")
-div.classList.add("element")
-const btnTrash = document.createElement("button")
-btnTrash.classList.add("element__trash")
-let image = document.createElement("img")
-image.classList.add("element__mask")
-image.src = "#"
-image.alt = ""
-const divGroup = document.createElement("div")
-divGroup.classList.add("element__group")
-const title = document.createElement("h2")
-title.classList.add("element__title")
-const likeBtn = document.createElement("button")
-likeBtn.classList.add("element__like-button")
-template.appendChild(div)
-div.appendChild(btnTrash)
-div.appendChild(image)
-div.appendChild(divGroup)
-divGroup.appendChild(title)
-divGroup.appendChild(likeBtn)
 
 const initialCardsList = document.querySelector(".elements")
 
@@ -152,6 +132,9 @@ document.body.onload = function () {
       btnTrash[i].onclick = function () {
         this.parentElement.remove()
       }
+
+
+      
 }
 
 

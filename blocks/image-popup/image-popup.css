@@ -1,5 +1,5 @@
-.popup-new {
-  height: 100%;
+.image-popup {
+  height: 100vh;
   position: fixed;
   visibility: hidden;
   opacity: 0;
@@ -7,15 +7,10 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.9);
   align-items: center;
   justify-content: center;
   display: flex;
   z-index: 1;
-}
-
-@media screen and (max-width: 500px) {
-  .popup-new {
-    width: 100%;
-  }
 }

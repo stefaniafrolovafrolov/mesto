@@ -1,96 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="description" content="Лендинг page с карточками городов." >
-    <meta name="author" content="Vadim Frolov" >
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <link rel="stylesheet" href="./pages/index.css" >
-    <link rel="shortcut icon" href="./images/logo-icon.png" >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Лендинг page с карточками городов.">
+    <meta name="author" content="Vadim Frolov">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./pages/index.css">
+    <link rel="shortcut icon" href="./images/logo-icon.png">
     <title>Проектная работа Mesto</title>
-    <style>
-
-.image-popup {
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.9);
-  align-items: center;
-  justify-content: center;
-  display: none;
-  z-index: 1;
-}
-
-.image-popup_opened {
-display: flex;
-
-}
-
-.image-popup__container {
-  position: relative;
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  width: 75vw;
-  height: 75vh;
-}
-.image-popup__close {
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  right: -40px;
-  top: -40px;
-  border: none;
-  background-color: transparent;
-  background-image: url(./images/Close\ Icon.png);
-  cursor: pointer;
-}
-.image-popup__image {
- width: 100%;
-  height: 100%;
-  display: block;
-  box-sizing: border-box;
-}
-.image-popup__parag {
-  margin: 0;
-  padding-top: 10px;
-  max-width: 291px;
-font-family: 'Inter';
-font-weight: 400;
-font-size: 12px;
-line-height: 15px;
-color: #FFFFFF;
-}
-
-
-    </style>
   </head>
   <body class="root">
     <div class="page">
-
-
-      <div class="image-popup">
-        <div class="image-popup__container">
-          <button class="image-popup__close" type="button"></button>
-      <img class="image-popup__image" src="./images/Карачаевск.jpg" alt="">
-        <p class="image-popup__parag">Карачаевск</p>
-        </div>
-        </div>
-
-
-
       <header class="header">
         <img
           class="header__logo"
           src="./images/header-logo.png"
           alt="Надписть на логотипе Mesto Russia"
-          >
+        >
       </header>
       <main class="content">
         <section class="profile">
@@ -99,43 +26,32 @@ color: #FFFFFF;
               class="profile__avatar"
               src="./images/profile-avatar.jpg"
               alt="Изображенна фото Жак-Ив Кусто в красной шапке"
-              >
+            >
             <div class="profile__info">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button" id="myBtn" type="button"></button>
+              <button
+                class="profile__edit-button"
+                id="myBtn"
+                type="button"
+              ></button>
               <p class="profile__subtitle">Исследователь океана</p>
             </div>
           </div>
           <button class="profile__add-button" type="button"></button>
         </section>
 
-        <section class="elements">
-  
-        </section>
+        <section class="elements"></section>
 
-
-
-
-
-<template id="element-template">
-<div class="element">
-<button class="element__trash"></button>
-<img class="element__mask" src="" alt="">
-<div class="element__group">
-<h2 class="element__title"></h2>
-<button class="element__like-button"></button>
-</div>
-</div>
-</template>
-
-
-
-
-    
-
-
-
-
+        <template id="element-template">
+          <div class="element">
+            <button class="element__trash"></button>
+            <img class="element__mask" src="" alt="" >
+            <div class="element__group">
+              <h2 class="element__title"></h2>
+              <button class="element__like-button"></button>
+            </div>
+          </div>
+        </template>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2022. Фролов Вадим</p>
@@ -152,23 +68,18 @@ color: #FFFFFF;
                 name="nameInput"
                 type="text"
                 placeholder="Имя"
-                >
+              >
               <input
                 class="popup__input popup__input_type_job"
                 name="jobInput"
                 type="text"
                 placeholder="О себе"
-                >
+              >
             </fieldset>
             <button class="popup__save" type="submit">Сохранить</button>
           </form>
         </div>
       </div>
-
-
-
-
-
 
       <div class="popup-new">
         <div class="popup__container-new">
@@ -181,21 +92,30 @@ color: #FFFFFF;
                 name="nameInputNew"
                 type="text"
                 placeholder="Название"
-                >
+              >
               <input
                 class="popup__input-new popup__input-new_type_link"
                 name="linkInputNew"
                 type="url"
                 placeholder="Ссылка на картинку"
-                >
+              >
             </fieldset>
             <button class="popup__save-new" type="submit">Создать</button>
           </form>
         </div>
       </div>
 
-     
-
+      <div class="image-popup">
+        <figure class="image-popup__container">
+          <img
+            class="image-popup__image"
+            src="#"
+            alt="Изображения городов России"
+          >
+          <figcaption class="image-popup__title"></figcaption>
+          <button class="image-popup__close" type="button"></button>
+        </figure>
+      </div>
     </div>
     <script src="./scripts/index.js"></script>
   </body>

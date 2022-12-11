@@ -144,6 +144,7 @@ function createCard(evt) {
   const name = nameInputNew.value
   const link = linkInputNew.value
   renderCard({ name, link })
+  closePopup()
 }
 
 imageClosePopup.addEventListener("click", closePopup)

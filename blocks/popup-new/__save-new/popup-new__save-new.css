@@ -1,4 +1,4 @@
-.popup__save-new {
+.popup-new__save-new {
     margin: 0;
     border: none;
     width: 358px;
@@ -17,13 +17,13 @@
     box-sizing: border-box;
   }
   
-  .popup__save-new:hover {
+  .popup-new__save-new:hover {
     opacity: 0.8;
     transition: 0.5s ease-in-out;
   }
   
   @media screen and (max-width: 500px) {
-    .popup__save-new {
+    .popup-new__save-new {
       margin-top: 45px;
       width: 238px;
       height: 46px;

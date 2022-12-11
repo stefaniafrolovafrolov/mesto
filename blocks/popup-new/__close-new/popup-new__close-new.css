@@ -1,4 +1,4 @@
-.image-popup__close {
+.popup-new__close-new {
   width: 32px;
   height: 32px;
   position: absolute;
@@ -11,13 +11,13 @@
   cursor: pointer;
 }
 
-.image-popup__close:hover {
+.popup-new__close-new:hover {
   opacity: 0.6;
   transition: 0.5s ease-in-out;
 }
 
 @media screen and (max-width: 550px) {
-  .image-popup__close {
+  .popup-new__close-new {
     align-items: flex-start;
     background-image: url(../../../images/Close\Icon\\(1\).png);
     width: 20px;

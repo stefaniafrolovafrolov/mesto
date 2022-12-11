@@ -8,8 +8,8 @@ const profTitle = document.querySelector(".profile__title")
 const profParag = document.querySelector(".profile__subtitle")
 const profAddBtn = document.querySelector(".profile__add-button")
 const popupNew = document.querySelector(".popup-new")
-const closeNewBtn = document.querySelector(".popup__close-new")
-const popupSaveNew = document.querySelector(".popup__save-new")
+const closeNewBtn = document.querySelector(".popup-new__close-new")
+const popupSaveNew = document.querySelector(".popup-new__save-new")
 
 function openPopupNew() {
   popupNew.classList.add("popup-new_opened")
@@ -135,9 +135,9 @@ function renderCard({ name, link }) {
 
 render()
 
-const formElementNew = document.querySelector(".popup__form-new")
-const nameInputNew = document.querySelector(".popup__input-new_type_name")
-const linkInputNew = document.querySelector(".popup__input-new_type_link")
+const formElementNew = document.querySelector(".popup-new__form-new")
+const nameInputNew = document.querySelector(".popup-new__input-new_type_name")
+const linkInputNew = document.querySelector(".popup-new__input-new_type_link")
 
 function createCard(evt) {
   evt.preventDefault()

@@ -8,6 +8,7 @@
   background-color: transparent;
   background-image: url(../../../images/Close\ Icon.png);
   background-repeat: no-repeat;
+  background-size: cover;
   cursor: pointer;
 }
 

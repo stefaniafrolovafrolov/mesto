@@ -9,3 +9,21 @@
   background-image: url(../../../images/Close\ Icon.png);
   cursor: pointer;
 }
+
+.image-popup__close:hover {
+  opacity: 0.6;
+  transition: 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 550px) {
+  .image-popup__close {
+    align-items: flex-start;
+    background-image: url(../../../images/Close\Icon\\(1\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    top: -36px;
+  }
+}

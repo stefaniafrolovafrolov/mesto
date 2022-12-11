@@ -4,3 +4,9 @@
   display: block;
   object-fit: cover;
 }
+
+@media screen and (max-width: 500px) {
+  .image-popup__image {
+    height: 299px;
+  }
+}

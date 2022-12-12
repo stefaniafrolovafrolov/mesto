@@ -42,17 +42,6 @@ formProfile.addEventListener("submit", submitProfileForm)
 const cardsContainer = document.querySelector(".elements")
 const template = document.querySelector("#element-template").content
 
-const placeInfo = initialCards.map(function (item) {
-  return {
-    name: item.name,
-    link: item.link,
-  }
-})
-
-function render() {
-  placeInfo.reverse().forEach(renderCard)
-}
-
 const imageOpenPopup = document.querySelector(".image-popup__container")
 const popupImage = document.querySelector(".image-popup")
 const imageClosePopup = document.querySelector(".image-popup__close")
@@ -67,35 +56,47 @@ function imageOpen(card, link) {
   popupImage.classList.add("image-popup_opened")
 }
 
-function renderCard({ name, link }) {
+function createCard(value) {
   const card = template.querySelector(".element").cloneNode(true)
-  card.querySelector(".element__title").textContent = name
-  card.querySelector(".element__mask").src = link
+  if (card) {
+    const title = card.querySelector(".element__title")
+    const mask = card.querySelector(".element__mask")
+    const trash = card.querySelector(".element__trash")
+    const like = card.querySelector(".element__like-button")
+    if (title && mask && trash && like) {
+      title.textContent = value.name
+      mask.src = value.link
+      mask.addEventListener("click", () => {
+        imageOpen(card, value.link)
+      })
+      trash.addEventListener("click", () => {
+        card.remove()
+      })
 
-  card.querySelector(".element__mask").addEventListener("click", () => {
-    imageOpen(card, link)
-  })
-
-  card.querySelector(".element__trash").addEventListener("click", () => {
-    card.remove()
-  })
-
-  card.querySelector(".element__like-button").addEventListener("click", () => {
-    if (
-      card
-        .querySelector(".element__like-button")
-        .classList.contains("element__like-button_active")
-    ) {
-      card
-        .querySelector(".element__like-button")
-        .classList.remove("element__like-button_active")
-    } else {
-      card
-        .querySelector(".element__like-button")
-        .classList.add("element__like-button_active")
+      like.addEventListener("click", () => {
+        const button = card.querySelector(".element__like-button")
+        const clsName = "element__like-button_active"
+        if (button)
+          if (button.classList.contains(clsName)) {
+            button.classList.remove(clsName)
+          } else {
+            button.classList.add(clsName)
+          }
+      })
     }
+  }
+  return card
+}
+
+function renderCard(card, container) {
+  container.prepend(card)
+}
+
+function render() {
+  initialCards.reverse().forEach((value) => {
+    const newCard = createCard(value)
+    if (newCard) renderCard(newCard, cardsContainer)
   })
-  cardsContainer.prepend(card)
 }
 
 render()
@@ -108,7 +109,8 @@ function submitCardForm(evt) {
   evt.preventDefault()
   const name = nameInputNew.value
   const link = linkInputNew.value
-  renderCard({ name, link })
+  const newCard = createCard({ name, link })
+  if (newCard) renderCard(newCard, cardsContainer)
   closePopup()
   formProfileNew.reset()
 }

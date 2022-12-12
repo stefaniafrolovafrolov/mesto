@@ -39,8 +39,6 @@ function submitProfileForm(evt) {
 }
 
 popupProfileCloseButtonNew.addEventListener("click", closePopup)
-
-
 popupProfileOpenButton.addEventListener("click", openPopup)
 popupProfileCloseButton.addEventListener("click", closePopup)
 formProfile.addEventListener("submit", submitProfileForm)

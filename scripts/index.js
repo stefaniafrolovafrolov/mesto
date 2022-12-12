@@ -1,6 +1,8 @@
-const popup = document.querySelectorAll(".popup")
+const popups = document.querySelectorAll(".popup")
 const popupEditProfile = document.querySelector(".popup_type_edit-profile");
 const popupAddCard = document.querySelector(".popup_type_add-card");
+
+
 
 
 const formProfile = document.querySelector("#editForm")
@@ -15,22 +17,38 @@ const popupProfileOpenButtonNew = document.querySelector(".profile__add-button")
 /*const popupProfileNew = document.querySelector(".popup")*/
 const popupProfileCloseButtonNew = document.querySelector(".popup-new__close-new")
 
-function openPopup(popup) {
-  popup.classList.add('popup_opened');
-} 
 
+const openPopup = (popup) => {
+  popup.classList.add("popup_opened");
+};
+const closePopup = (popup) => {
+  popup.classList.remove("popup_opened");
+};
+popups.forEach((popup) => {
+  popup.addEventListener("click", (e) => {
+    if (e.target.classList.contains("popup__close")) closePopup(popup);
+  });
+});
+
+
+function openEditProfile() {
+  openPopup(popupEditProfile);
+  nameInput.value = profileTitle.textContent;
+  jobInput.value = profileParag.textContent;
+}
+popupEditProfile.addEventListener("click", openPopup)
+popupProfileCloseButton.addEventListener("click", closePopup)
 /*function openPopup() {
   popups.classList.add("popup_opened")
   nameInput.value = profileTitle.textContent
   jobInput.value = profileParag.textContent
 }*/
 
-function closePopup() {
+/*function closePopup() {
   popupProfile.classList.remove("popup_opened")
-  popupProfileNew.classList.remove("popup-new_opened")
-  popupImage.classList.remove("image-popup_opened")
+ 
 }
-
+*/
 function submitProfileForm(evt) {
   evt.preventDefault()
   profileTitle.textContent = nameInput.value
@@ -38,10 +56,12 @@ function submitProfileForm(evt) {
   closePopup()
 }
 
-popupProfileCloseButtonNew.addEventListener("click", closePopup)
+
+
+/*popupProfileCloseButtonNew.addEventListener("click", closePopup)
 popupProfileOpenButton.addEventListener("click", openPopup)
 popupProfileCloseButton.addEventListener("click", closePopup)
-formProfile.addEventListener("submit", submitProfileForm)
+formProfile.addEventListener("submit", submitProfileForm)*/
 
 const cardsContainer = document.querySelector(".elements")
 const template = document.querySelector("#element-template").content

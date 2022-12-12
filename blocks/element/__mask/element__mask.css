@@ -7,4 +7,10 @@
   border-bottom-left-radius: 0px;
   background-size: cover;
   object-fit: cover;
+  cursor: pointer;
+  transition: 0.8s ease-in-out;
+}
+
+.element__mask:hover {
+  opacity: 0.7;
 }

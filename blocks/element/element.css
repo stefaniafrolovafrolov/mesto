@@ -7,4 +7,9 @@
   border-radius: 10px;
   box-sizing: border-box;
   position: relative;
+  transition: 0.9s ease-in-out;
+}
+
+.element:hover {
+  transform: scale(1.08);
 }

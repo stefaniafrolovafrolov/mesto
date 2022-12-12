@@ -1,24 +1,29 @@
+const popup = document.querySelectorAll(".popup")
+const popupEditProfile = document.querySelector(".popup_type_edit-profile");
+const popupAddCard = document.querySelector(".popup_type_add-card");
+
+
 const formProfile = document.querySelector("#editForm")
 const popupProfileOpenButton = document.querySelector(".profile__edit-button")
 const popupProfileCloseButton = document.querySelector(".popup__close")
-const popupProfile = document.querySelector(".popup")
+/*const popupProfile = document.querySelector(".popup")*/
 const nameInput = document.querySelector(".popup__input_type_name")
 const jobInput = document.querySelector(".popup__input_type_job")
 const profileTitle = document.querySelector(".profile__title")
 const profileParag = document.querySelector(".profile__subtitle")
 const popupProfileOpenButtonNew = document.querySelector(".profile__add-button")
-const popupProfileNew = document.querySelector(".popup-new")
+/*const popupProfileNew = document.querySelector(".popup")*/
 const popupProfileCloseButtonNew = document.querySelector(".popup-new__close-new")
 
-function openPopupNew() {
-  popupProfileNew.classList.add("popup-new_opened")
-}
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+} 
 
-function openPopup() {
-  popupProfile.classList.add("popup_opened")
+/*function openPopup() {
+  popups.classList.add("popup_opened")
   nameInput.value = profileTitle.textContent
   jobInput.value = profileParag.textContent
-}
+}*/
 
 function closePopup() {
   popupProfile.classList.remove("popup_opened")
@@ -35,8 +40,8 @@ function submitProfileForm(evt) {
 
 popupProfileCloseButtonNew.addEventListener("click", closePopup)
 
+
 popupProfileOpenButton.addEventListener("click", openPopup)
-popupProfileOpenButtonNew.addEventListener("click", openPopupNew)
 popupProfileCloseButton.addEventListener("click", closePopup)
 formProfile.addEventListener("submit", submitProfileForm)
 

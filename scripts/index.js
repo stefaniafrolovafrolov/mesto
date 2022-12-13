@@ -1,22 +1,60 @@
-//начинаю править попапы
-const 
-const formProfile = document.querySelector("#editForm")
-const popupProfileOpenButton = document.querySelector(".profile__edit-button")
-const popupProfileCloseButton = document.querySelector(".popup__close")
-const popupProfile = document.querySelector(".popup")
+//начинаю править попапы в новой ветке new_branch от main 
+
+//попапы
+const popupEditProfile = document.querySelector(".popup_type_edit-profile");
+const popupAddCard = document.querySelector(".popup_type_add-card");
+const popupImage = document.querySelector(".popup_type_image");
+
+//формы
+const popupFormInEditProfile = popupEditProfile.querySelector("#editForm");
+const popupFormInAddCard = popupAddCard.querySelector("#addForm");
+
+//кнопки
+const profileAddButton = document.querySelector(".profile__add-button");
+const profileEditButton = document.querySelector(".profile__edit-button");
+const closeButtonEditProfile = document.querySelector(".popup__close");
+const closeButtonAddCard = document.querySelector(".popup__close");
+const closeButtonImage = document.querySelector(".popup__close");
+
+//поля инпутов
 const nameInput = document.querySelector(".popup__input_type_name")
 const jobInput = document.querySelector(".popup__input_type_job")
+
+//профиль тайтл и сабтайтл
 const profileTitle = document.querySelector(".profile__title")
 const profileParag = document.querySelector(".profile__subtitle")
-const popupProfileOpenButtonNew = document.querySelector(".profile__add-button")
-const popupProfileNew = document.querySelector(".popup-new")
-const popupProfileCloseButtonNew = document.querySelector(".popup-new__close-new")
 
-function openPopupNew() {
-  popupProfileNew.classList.add("popup-new_opened")
-}
 
-function openPopup() {
+
+//функция открытия попапов
+function openPopup(popup) {
+  popup.classList.add("popup_opened");
+  console.log();
+} 
+//функция закрытия попапов
+function closePopup(ev) {
+ /* console.log(ev.target.closest(".popup"))*/
+  const popup = ev.target.closest(".popup")
+  popup.classList.remove("popup_opened")
+   
+} 
+
+
+profileEditButton.addEventListener("click", () => {
+  openPopup(popupEditProfile)
+});
+
+
+closeButtonEditProfile.addEventListener("click", () => {
+  closePopup();
+});
+console.log();
+
+
+
+
+
+/*function openPopup() {
   popupProfile.classList.add("popup_opened")
   nameInput.value = profileTitle.textContent
   jobInput.value = profileParag.textContent
@@ -24,38 +62,36 @@ function openPopup() {
 
 function closePopup() {
   popupProfile.classList.remove("popup_opened")
-  popupProfileNew.classList.remove("popup-new_opened")
-  popupImage.classList.remove("image-popup_opened")
+ 
 }
-
+*/
 function submitProfileForm(evt) {
   evt.preventDefault()
   profileTitle.textContent = nameInput.value
   profileParag.textContent = jobInput.value
-  closePopup()
+  /*closePopup()*/
 }
 
-popupProfileCloseButtonNew.addEventListener("click", closePopup)
-popupProfileOpenButton.addEventListener("click", openPopup)
-popupProfileOpenButtonNew.addEventListener("click", openPopupNew)
-popupProfileCloseButton.addEventListener("click", closePopup)
-formProfile.addEventListener("submit", submitProfileForm)
+
+/*.addEventListener("click", openPopup)
+.addEventListener("click", closePopup)
+.addEventListener("submit", submitProfileForm)*/
 
 const cardsContainer = document.querySelector(".elements")
 const template = document.querySelector("#element-template").content
 
-const imageOpenPopup = document.querySelector(".image-popup__container")
-const popupImage = document.querySelector(".image-popup")
-const imageClosePopup = document.querySelector(".image-popup__close")
-const imageImg = document.querySelector(".image-popup__image")
-const imageTitle = document.querySelector(".image-popup__title")
+const imageOpenPopup = document.querySelector(".popup__image-container")
+/*const popupImage = document.querySelector(".popup")*/
+const imageClosePopup = document.querySelector(".popup__close")
+const imageImg = document.querySelector(".popup__image")
+const imageTitle = document.querySelector(".popup__image-title")
 
 function imageOpen(card, link) {
   const cardTitle = card.querySelector(".element__title").textContent
   imageImg.src = link
   imageImg.alt = cardTitle
   imageTitle.textContent = cardTitle
-  popupImage.classList.add("image-popup_opened")
+  popupImage.classList.add("popup_opened")
 }
 
 function createCard(value) {
@@ -77,12 +113,12 @@ function createCard(value) {
 
       like.addEventListener("click", () => {
         const button = card.querySelector(".element__like-button")
-        const clsName = "element__like-button_active"
+        const className = "element__like-button_active"
         if (button)
-          if (button.classList.contains(clsName)) {
-            button.classList.remove(clsName)
+          if (button.classList.contains(className)) {
+            button.classList.remove(className)
           } else {
-            button.classList.add(clsName)
+            button.classList.add(className)
           }
       })
     }
@@ -104,8 +140,8 @@ function render() {
 render()
 
 const formProfileNew = document.querySelector("#addForm")
-const nameInputNew = document.querySelector(".popup-new__input-new_type_name")
-const linkInputNew = document.querySelector(".popup-new__input-new_type_link")
+const nameInputNew = document.querySelector(".popup__input_type_image-name")
+const linkInputNew = document.querySelector(".popup__input_type_image-link")
 
 function submitCardForm(evt) {
   evt.preventDefault()
@@ -119,3 +155,6 @@ function submitCardForm(evt) {
 
 imageClosePopup.addEventListener("click", closePopup)
 formProfileNew.addEventListener("submit", submitCardForm)
+
+
+

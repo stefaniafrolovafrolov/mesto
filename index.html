@@ -42,7 +42,11 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2022. Фролов Вадим</p>
       </footer>
-      <div class="popup">
+
+
+
+
+      <div class="popup popup_type_edit-profile">
         <div class="popup__container">
           <button class="popup__close" type="button"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
@@ -55,28 +59,42 @@
           </form>
         </div>
       </div>
-      <div class="popup-new">
-        <div class="popup-new__container-new">
-          <button class="popup-new__close-new" type="button"></button>
-          <h2 class="popup-new__title-new">Новое место</h2>
-          <form class="popup-new__form-new" name="addForm" id="addForm">
-            <fieldset class="popup-new__fieldset-new" id="NewForm">
-              <input class="popup-new__input-new popup-new__input-new_type_name" name="nameInputNew" type="text" placeholder="Название">
-              <input class="popup-new__input-new popup-new__input-new_type_link" name="linkInputNew" type="url" placeholder="Ссылка на картинку">
+
+
+
+
+
+
+      <div class="popup popup_type_add-card">
+        <div class="popup__container">
+          <button class="popup__close" type="button"></button>
+          <h2 class="popup__title">Новое место</h2>
+          <form class="popup__form" name="addForm" id="addForm">
+            <fieldset class="popup__fieldset" id="NewForm">
+              <input class="popup__input popup__input_type_image-name" name="nameInputNew" type="text" placeholder="Название">
+              <input class="popup__input popup__input_type_image-link" name="linkInputNew" type="url" placeholder="Ссылка на картинку">
             </fieldset>
-            <button class="popup-new__save-new" type="submit">Создать</button>
+            <button class="popup__save" type="submit">Создать</button>
           </form>
         </div>
       </div>
-      <div class="image-popup">
-        <figure class="image-popup__container">
-          <img class="image-popup__image" src="#" alt="Изображения городов России">
-          <figcaption class="image-popup__title"></figcaption>
-          <button class="image-popup__close" type="button"></button>
+
+
+
+
+      <div class="popup popup_type_image">
+        <figure class="popup__image-container">
+          <img class="popup__image" src="#" alt="Изображения городов России">
+          <figcaption class="popup__image-title"></figcaption>
+          <button class="popup__close" type="button"></button>
         </figure>
       </div>
+    
+    
+
+
     </div>
-    <script src="./scripts/array.js"></script>
+<script src="./scripts/array.js"></script>
     <script src="./scripts/index.js"></script>
      </body>
 </html>

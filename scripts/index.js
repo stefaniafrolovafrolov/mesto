@@ -1,13 +1,14 @@
 //начинаю править попапы в новой ветке new_branch от main 
 
+//форма
+const formProfile = document.querySelector("#editForm")
+
+
 //попапы
 const popupEditProfile = document.querySelector(".popup_type_edit-profile");
 const popupAddCard = document.querySelector(".popup_type_add-card");
 const popupImage = document.querySelector(".popup_type_image");
 
-//формы
-const popupFormInEditProfile = popupEditProfile.querySelector("#editForm");
-const popupFormInAddCard = popupAddCard.querySelector("#addForm");
 
 //кнопки
 const profileAddButton = document.querySelector(".profile__add-button");
@@ -29,53 +30,56 @@ const profileParag = document.querySelector(".profile__subtitle")
 //функция открытия попапов
 function openPopup(popup) {
   popup.classList.add("popup_opened");
-  console.log();
+  
 } 
+
 //функция закрытия попапов
-function closePopup(ev) {
- /* console.log(ev.target.closest(".popup"))*/
-  const popup = ev.target.closest(".popup")
-  popup.classList.remove("popup_opened")
-   
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
 } 
+
+
 
 
 profileEditButton.addEventListener("click", () => {
+  nameInput.value = profileTitle.textContent
+  jobInput.value = profileParag.textContent
   openPopup(popupEditProfile)
 });
 
 
-closeButtonEditProfile.addEventListener("click", () => {
-  closePopup();
+profileAddButton.addEventListener("click", () => {
+  openPopup(popupAddCard)
 });
-console.log();
 
 
 
 
 
-/*function openPopup() {
-  popupProfile.classList.add("popup_opened")
-  nameInput.value = profileTitle.textContent
-  jobInput.value = profileParag.textContent
-}
+closeButtonEditProfile.addEventListener("click", () => {
+  closePopup(popupEditProfile);
+});
 
-function closePopup() {
-  popupProfile.classList.remove("popup_opened")
+
+closeButtonAddCard.addEventListener("click", () => {
+  closePopup(popupAddCard);
  
-}
-*/
+});
+
+closeButtonImage.addEventListener("click", () => {
+  closePopup(popupImage);
+});
+
+
+
 function submitProfileForm(evt) {
   evt.preventDefault()
   profileTitle.textContent = nameInput.value
   profileParag.textContent = jobInput.value
-  /*closePopup()*/
+  closePopup(popupEditProfile)
 }
 
-
-/*.addEventListener("click", openPopup)
-.addEventListener("click", closePopup)
-.addEventListener("submit", submitProfileForm)*/
+formProfile.addEventListener("submit", submitProfileForm)
 
 const cardsContainer = document.querySelector(".elements")
 const template = document.querySelector("#element-template").content
@@ -149,11 +153,11 @@ function submitCardForm(evt) {
   const link = linkInputNew.value
   const newCard = createCard({ name, link })
   if (newCard) renderCard(newCard, cardsContainer)
-  closePopup()
+  closePopup(popupAddCard)
   formProfileNew.reset()
 }
 
-imageClosePopup.addEventListener("click", closePopup)
+/*imageClosePopup.addEventListener("click", closePopup)*/
 formProfileNew.addEventListener("submit", submitCardForm)
 
 

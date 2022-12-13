@@ -1,96 +1,89 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Лендинг page с карточками городов России.">
-    <meta name="author" content="Vadim Frolov">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./pages/index.css">
-    <link rel="shortcut icon" href="./images/logo-icon.png">
-    <title>Проектная работа Mesto</title>
-  </head>
-  <body class="root">
-    <div class="page">
-      <header class="header">
-        <img class="header__logo" src="./images/header-logo.svg" alt="Надписть на логотипе Mesto Russia">
-      </header>
-      <main class="content">
-        <section class="profile">
-          <div class="profile__container">
-            <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Изображенна фото Жак-Ив Кусто в красной шапке">
-            <div class="profile__info">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button" id="myBtn" type="button"></button>
-              <p class="profile__subtitle">Исследователь океана</p>
-            </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Лендинг page с карточками городов России.">
+  <meta name="author" content="Vadim Frolov">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="shortcut icon" href="./images/logo-icon.png">
+  <title>Проектная работа Mesto</title>
+</head>
+
+<body class="root">
+  <div class="page">
+    <header class="header">
+      <img class="header__logo" src="./images/header-logo.svg" alt="Надписть на логотипе Mesto Russia">
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__container">
+          <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Изображенна фото Жак-Ив Кусто в красной шапке">
+          <div class="profile__info">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" id="myBtn" type="button"></button>
+            <p class="profile__subtitle">Исследователь океана</p>
           </div>
-          <button class="profile__add-button" type="button"></button>
-        </section>
-        <section class="elements"></section>
-        <template id="element-template">
-          <div class="element">
-            <button class="element__trash"></button>
-            <img class="element__mask" src="#" alt="Изображения городов России">
-            <div class="element__group">
-              <h2 class="element__title"></h2>
-              <button class="element__like-button"></button>
-            </div>
+        </div>
+        <button class="profile__add-button" type="button"></button>
+      </section>
+      <section class="elements"></section>
+      <template id="element-template">
+        <div class="element">
+          <button class="element__trash"></button>
+          <img class="element__mask" src="#" alt="Изображения городов России">
+          <div class="element__group">
+            <h2 class="element__title"></h2>
+            <button class="element__like-button"></button>
           </div>
-        </template>
-      </main>
-      <footer class="footer">
-        <p class="footer__copyright">&copy; 2022. Фролов Вадим</p>
-      </footer>
-
-
-
-
-      <div class="popup popup_type_edit-profile">
-        <div class="popup__container">
-          <button class="popup__close" type="button"></button>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__form" name="editForm" id="editForm">
-            <fieldset class="popup__fieldset" id="form">
-              <input class="popup__input popup__input_type_name" name="nameInput" type="text" placeholder="Имя">
-              <input class="popup__input popup__input_type_job" name="jobInput" type="text" placeholder="О себе">
-            </fieldset>
-            <button class="popup__save" type="submit">Сохранить</button>
-          </form>
         </div>
+      </template>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022. Фролов Вадим</p>
+    </footer>
+
+    <div class="popup popup_type_edit-profile">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__form" name="editForm" id="editForm">
+          <fieldset class="popup__fieldset" id="form">
+            <input class="popup__input popup__input_type_name" name="nameInput" type="text" placeholder="Имя">
+            <input class="popup__input popup__input_type_job" name="jobInput" type="text" placeholder="О себе">
+          </fieldset>
+          <button class="popup__save" type="submit">Сохранить</button>
+        </form>
       </div>
-
-
-<div class="popup popup_type_add-card">
-        <div class="popup__container">
-          <button class="popup__close" type="button"></button>
-          <h2 class="popup__title">Новое место</h2>
-          <form class="popup__form" name="addForm" id="addForm">
-            <fieldset class="popup__fieldset" id="NewForm">
-              <input class="popup__input popup__input_type_image-name" name="nameInputNew" type="text" placeholder="Название">
-              <input class="popup__input popup__input_type_image-link" name="linkInputNew" type="url" placeholder="Ссылка на картинку">
-            </fieldset>
-            <button class="popup__save" type="submit">Создать</button>
-          </form>
-        </div>
-      </div>
-
-
-
-
-      <div class="popup popup_type_image">
-        <figure class="popup__image-container">
-          <img class="popup__image" src="#" alt="Изображения городов России">
-          <figcaption class="popup__image-title"></figcaption>
-          <button class="popup__close" type="button"></button>
-        </figure>
-      </div>
-    
-    
-
-
     </div>
-<script src="./scripts/array.js"></script>
-    <script src="./scripts/index.js"></script>
-     </body>
+
+    <div class="popup popup_type_add-card">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form" name="addForm" id="addForm">
+          <fieldset class="popup__fieldset" id="NewForm">
+            <input class="popup__input popup__input_type_image-name" name="nameInputNew" type="text" placeholder="Название">
+            <input class="popup__input popup__input_type_image-link" name="linkInputNew" type="url" placeholder="Ссылка на картинку">
+          </fieldset>
+          <button class="popup__save" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_type_image">
+      <figure class="popup__image-container">
+        <img class="popup__image" src="#" alt="Изображения городов России">
+        <figcaption class="popup__image-title"></figcaption>
+        <button class="popup__close" type="button"></button>
+      </figure>
+    </div>
+
+  </div>
+  <script src="./scripts/array.js"></script>
+  <script src="./scripts/index.js"></script>
+</body>
+
 </html>

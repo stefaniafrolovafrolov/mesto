@@ -1,19 +1,18 @@
-//форма
+//формы
 const formProfile = document.querySelector("#editForm")
-
+const formProfileNew = document.querySelector("#addForm")
 
 //попапы
-const popupEditProfile = document.querySelector(".popup_type_edit-profile");
-const popupAddCard = document.querySelector(".popup_type_add-card");
-const popupImage = document.querySelector(".popup_type_image");
-
+const popupEditProfile = document.querySelector(".popup_type_edit-profile")
+const popupAddCard = document.querySelector(".popup_type_add-card")
+const popupImage = document.querySelector(".popup_type_image")
 
 //кнопки
-const profileAddButton = document.querySelector(".profile__add-button");
-const profileEditButton = document.querySelector(".profile__edit-button");
-const closeButtonEditProfile = popupEditProfile.querySelector(".popup__close");
-const closeButtonAddCard = popupAddCard.querySelector(".popup__close");
-const closeButtonImage = popupImage.querySelector(".popup__close");
+const profileAddButton = document.querySelector(".profile__add-button")
+const profileEditButton = document.querySelector(".profile__edit-button")
+const closeButtonEditProfile = popupEditProfile.querySelector(".popup__close")
+const closeButtonAddCard = popupAddCard.querySelector(".popup__close")
+const closeButtonImage = popupImage.querySelector(".popup__close")
 
 //поля инпутов
 const nameInput = popupEditProfile.querySelector(".popup__input_type_name")
@@ -27,61 +26,44 @@ const cardsContainer = document.querySelector(".elements")
 const template = document.querySelector("#element-template").content
 
 const imageOpenPopup = document.querySelector(".popup__image-container")
-
 const imageClosePopup = document.querySelector(".popup__close")
 const imageImg = document.querySelector(".popup__image")
 const imageTitle = document.querySelector(".popup__image-title")
 
-const formProfileNew = document.querySelector("#addForm")
 const nameInputNew = document.querySelector(".popup__input_type_image-name")
 const linkInputNew = document.querySelector(".popup__input_type_image-link")
 
 //функция открытия попапов
 function openPopup(popup) {
-  popup.classList.add("popup_opened");
-  
-} 
+  popup.classList.add("popup_opened")
+}
 
 //функция закрытия попапов
 function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-} 
-
-
-
-
+  popup.classList.remove("popup_opened")
+}
 
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileTitle.textContent
   jobInput.value = profileParag.textContent
   openPopup(popupEditProfile)
-});
+})
 
 profileAddButton.addEventListener("click", () => {
   openPopup(popupAddCard)
-});
-
-
-
+})
 
 closeButtonEditProfile.addEventListener("click", () => {
-  closePopup(popupEditProfile);
-});
-
+  closePopup(popupEditProfile)
+})
 
 closeButtonAddCard.addEventListener("click", () => {
-  closePopup(popupAddCard);
- 
-});
-
-
-
+  closePopup(popupAddCard)
+})
 
 closeButtonImage.addEventListener("click", () => {
-  closePopup(popupImage);
-});
-
-
+  closePopup(popupImage)
+})
 
 function submitProfileForm(evt) {
   evt.preventDefault()
@@ -91,8 +73,6 @@ function submitProfileForm(evt) {
 }
 
 formProfile.addEventListener("submit", submitProfileForm)
-
-
 
 function imageOpen(card, link) {
   const cardTitle = card.querySelector(".element__title").textContent
@@ -147,8 +127,6 @@ function render() {
 
 render()
 
-
-
 function submitCardForm(evt) {
   evt.preventDefault()
   const name = nameInputNew.value
@@ -159,8 +137,4 @@ function submitCardForm(evt) {
   formProfileNew.reset()
 }
 
-
 formProfileNew.addEventListener("submit", submitCardForm)
-
-
-

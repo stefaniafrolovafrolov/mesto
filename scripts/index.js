@@ -100,13 +100,12 @@ function createCard(value) {
       })
 
       like.addEventListener("click", () => {
-        const button = card.querySelector(".element__like-button")
         const className = "element__like-button_active"
-        if (button)
-          if (button.classList.contains(className)) {
-            button.classList.remove(className)
+        if (like)
+          if (like.classList.contains(className)) {
+            like.classList.remove(className)
           } else {
-            button.classList.add(className)
+            like.classList.add(className)
           }
       })
     }

@@ -7,7 +7,7 @@
   align-self: center;
   margin-left: 22px;
   border: none;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -19,11 +19,17 @@
   padding-right: 20px;
   outline: none;
   padding-bottom: 8px;
+  padding-top: 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .popup__input:last-of-type {
   margin-bottom: 0px;
+}
+
+.popup__input:focus {
+  outline: 3px solid rgba(100, 149, 237, 0.8);
+  border-radius: 2px;
 }
 
 @media screen and (max-width: 500px) {

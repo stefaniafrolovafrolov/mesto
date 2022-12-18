@@ -51,8 +51,8 @@
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="editForm" id="editForm">
           <fieldset class="popup__fieldset" id="form">
-            <input class="popup__input popup__input_type_name" name="nameInput" type="text" placeholder="Имя">
-            <input class="popup__input popup__input_type_job" name="jobInput" type="text" placeholder="О себе">
+            <input class="popup__input popup__input_type_name" name="nameInput" type="text" placeholder="Имя" minlength="2" maxlength="40">
+            <input class="popup__input popup__input_type_job" name="jobInput" type="text" placeholder="О себе" minlength="2" maxlength="200">
           </fieldset>
           <button class="popup__save" type="submit">Сохранить</button>
         </form>

@@ -65,6 +65,32 @@ closeButtonImage.addEventListener("click", () => {
   closePopup(popupImage)
 })
 
+popupEditProfile.addEventListener("click", (evt) => {
+  if (evt.currentTarget === evt.target) {
+    closePopup(popupEditProfile)
+  }
+})
+
+popupAddCard.addEventListener("click", (evt) => {
+  if (evt.currentTarget === evt.target) {
+    closePopup(popupAddCard)
+  }
+})
+
+popupImage.addEventListener("click", (evt) => {
+  if (evt.currentTarget === evt.target) {
+    closePopup(popupImage)
+  }
+})
+
+document.addEventListener("keydown", (evt) => {
+  if (evt.code == "Escape") {
+    closePopup(popupImage)
+    closePopup(popupAddCard)
+    closePopup(popupEditProfile)
+  }
+})
+
 function submitProfileForm(evt) {
   evt.preventDefault()
   profileTitle.textContent = nameInput.value

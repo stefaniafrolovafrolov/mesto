@@ -58,11 +58,11 @@
          
             <label class="popup__label">
             <input id="nameInput" class="popup__input popup__input_type_name" name="nameInput" type="text" placeholder="Имя"  minlength="2" maxlength="40" required>
-          <span id="nameInput-error" class="error" ></span>
+          <span class="nameInput-error error"></span>
         </label>
         <label class="popup__label">
           <input id="jobInput" class="popup__input popup__input_type_job" name="jobInput" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
-            <span id="jobInput-error" class="error"></span>
+            <span class="jobInput-error error"></span>
           </label>
         
           <button class="popup__save popup__save_disabled" type="submit">Сохранить</button>
@@ -75,12 +75,14 @@
         <button class="popup__close" type="button"></button>
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form" name="addForm" id="addForm" novalidate>
-          
+          <label class="popup__label">
             <input id="nameInputNew" class="popup__input popup__input_type_image-name" name="nameInputNew" type="text" placeholder="Название" minlength="2" maxlength="30" required>
-            <span id="nameInputNew-error" class="error" ></span>
+            <span class="nameInputNew-error error" ></span>
+          </label>
+          <label class="popup__label">
             <input id="linkInputNew" class="popup__input popup__input_type_image-link" name="linkInputNew" type="url" placeholder="Ссылка на картинку" required>
-            <span id="linkInputNew-error" class="error" ></span>
-         
+            <span class="linkInputNew-error error" ></span>
+          </label>
           <button class="popup__save popup__save_disabled" type="submit">Создать</button>
         </form>
       </div>

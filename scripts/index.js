@@ -10,9 +10,9 @@ const popupImage = document.querySelector(".popup_type_image")
 //кнопки
 const profileAddButton = document.querySelector(".profile__add-button")
 const profileEditButton = document.querySelector(".profile__edit-button")
-const closeButtonEditProfile = popupEditProfile.querySelector(".popup__close")
-const closeButtonAddCard = popupAddCard.querySelector(".popup__close")
-const closeButtonImage = popupImage.querySelector(".popup__close")
+const buttonClosePopupProfile = popupEditProfile.querySelector(".popup__close")
+const buttonClosePopupAddCard = popupAddCard.querySelector(".popup__close")
+const buttonClosePopupImage = popupImage.querySelector(".popup__close")
 
 //поля инпутов
 const nameInput = popupEditProfile.querySelector(".popup__input_type_name")
@@ -33,14 +33,29 @@ const imageTitle = document.querySelector(".popup__image-title")
 const nameInputNew = document.querySelector(".popup__input_type_image-name")
 const linkInputNew = document.querySelector(".popup__input_type_image-link")
 
+function closePopupOnEscape(evt) {
+  const popup = document.querySelector(".popup_opened")
+  if (evt.code == "Escape") {
+    closePopup(popup)
+  }
+}
+
 //функция открытия попапов
 function openPopup(popup) {
+  const buttonSave = popup.querySelector(".popup__save")
+  if (buttonSave) {
+    buttonSave.classList.remove("popup__save_valid")
+    buttonSave.classList.add("popup__save_disabled")
+  }
+
+  document.addEventListener("keydown", closePopupOnEscape)
   popup.classList.add("popup_opened")
 }
 
 //функция закрытия попапов
 function closePopup(popup) {
   popup.classList.remove("popup_opened")
+  document.removeEventListener("keydown", closePopupOnEscape)
 }
 
 profileEditButton.addEventListener("click", () => {
@@ -53,15 +68,15 @@ profileAddButton.addEventListener("click", () => {
   openPopup(popupAddCard)
 })
 
-closeButtonEditProfile.addEventListener("click", () => {
+buttonClosePopupProfile.addEventListener("click", () => {
   closePopup(popupEditProfile)
 })
 
-closeButtonAddCard.addEventListener("click", () => {
+buttonClosePopupAddCard.addEventListener("click", () => {
   closePopup(popupAddCard)
 })
 
-closeButtonImage.addEventListener("click", () => {
+buttonClosePopupImage.addEventListener("click", () => {
   closePopup(popupImage)
 })
 
@@ -83,14 +98,6 @@ popupImage.addEventListener("click", (evt) => {
   }
 })
 
-document.addEventListener("keydown", (evt) => {
-  if (evt.code == "Escape") {
-    closePopup(popupImage)
-    closePopup(popupAddCard)
-    closePopup(popupEditProfile)
-  }
-})
-
 function submitProfileForm(evt) {
   evt.preventDefault()
   profileTitle.textContent = nameInput.value
@@ -101,10 +108,9 @@ function submitProfileForm(evt) {
 formProfile.addEventListener("submit", submitProfileForm)
 
 function imageOpen(card, link) {
-  const cardTitle = card.querySelector(".element__title").textContent
   imageImg.src = link
-  imageImg.alt = cardTitle
-  imageTitle.textContent = cardTitle
+  imageImg.alt = card
+  imageTitle.textContent = card
   openPopup(popupImage)
 }
 
@@ -118,8 +124,9 @@ function createCard(value) {
     if (title && mask && trash && like) {
       title.textContent = value.name
       mask.src = value.link
+      mask.alt = title.textContent
       mask.addEventListener("click", () => {
-        imageOpen(card, value.link)
+        imageOpen(title.textContent, value.link)
       })
       trash.addEventListener("click", () => {
         card.remove()

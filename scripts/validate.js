@@ -1,3 +1,12 @@
+function disableSubmitButton(popup) {
+  const buttonSave = popup.querySelector(".popup__save")
+  if (buttonSave) {
+    buttonSave.classList.remove("popup__save_valid")
+    buttonSave.classList.add("popup__save_disabled")
+    buttonSave.disabled = true
+  }
+}
+
 function showInputError(formElement, inputElement, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`)
   errorElement.classList.add(config.errorClass)

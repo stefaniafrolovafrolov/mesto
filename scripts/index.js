@@ -33,23 +33,30 @@ const imageTitle = document.querySelector(".popup__image-title")
 const nameInputNew = document.querySelector(".popup__input_type_image-name")
 const linkInputNew = document.querySelector(".popup__input_type_image-link")
 
-function closePopupOnEscape(evt) {
-  const popup = document.querySelector(".popup_opened")
-  if (evt.code == "Escape") {
-    closePopup(popup)
-  }
+popupAddCard.onOpenPopup = (popup) => {
+  disableSubmitButton(popup)
 }
+
+popupEditProfile.onOpenPopup = (popup) => {
+  disableSubmitButton(popup)
+}
+
+popupImage.onOpenPopup = (popup) => {}
 
 //функция открытия попапов
 function openPopup(popup) {
-  const buttonSave = popup.querySelector(".popup__save")
-  if (buttonSave) {
-    buttonSave.classList.remove("popup__save_valid")
-    buttonSave.classList.add("popup__save_disabled")
-  }
-
   document.addEventListener("keydown", closePopupOnEscape)
+  if (popup.onOpenPopup) {
+    popup.onOpenPopup(popup)
+  }
   popup.classList.add("popup_opened")
+}
+
+function closePopupOnEscape(evt) {
+  if (evt.code == "Escape") {
+    const popup = document.querySelector(".popup_opened")
+    closePopup(popup)
+  }
 }
 
 //функция закрытия попапов

@@ -33,22 +33,9 @@ const imageTitle = document.querySelector(".popup__image-title")
 const nameInputNew = document.querySelector(".popup__input_type_image-name")
 const linkInputNew = document.querySelector(".popup__input_type_image-link")
 
-popupAddCard.onOpenPopup = (popup) => {
-  disableSubmitButton(popup)
-}
-
-popupEditProfile.onOpenPopup = (popup) => {
-  disableSubmitButton(popup)
-}
-
-popupImage.onOpenPopup = (popup) => {}
-
 //функция открытия попапов
 function openPopup(popup) {
   document.addEventListener("keydown", closePopupOnEscape)
-  if (popup.onOpenPopup) {
-    popup.onOpenPopup(popup)
-  }
   popup.classList.add("popup_opened")
 }
 
@@ -68,10 +55,12 @@ function closePopup(popup) {
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileTitle.textContent
   jobInput.value = profileParag.textContent
+  disableSubmitButton(popupEditProfile, validationConfig)
   openPopup(popupEditProfile)
 })
 
 profileAddButton.addEventListener("click", () => {
+  disableSubmitButton(popupAddCard, validationConfig)
   openPopup(popupAddCard)
 })
 

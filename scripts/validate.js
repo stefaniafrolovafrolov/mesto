@@ -1,8 +1,8 @@
-function disableSubmitButton(popup) {
-  const buttonSave = popup.querySelector(".popup__save")
+function disableSubmitButton(popup, config) {
+  const buttonSave = popup.querySelector(config.submitButtonSelector)
   if (buttonSave) {
-    buttonSave.classList.remove("popup__save_valid")
-    buttonSave.classList.add("popup__save_disabled")
+    buttonSave.classList.remove(config.activeButtonClass)
+    buttonSave.classList.add(config.inactiveButtonClass)
     buttonSave.disabled = true
   }
 }

@@ -1,3 +1,7 @@
+
+import { Card } from "./Card.js"
+import { validationConfig } from "./validationConfig.js"
+import { initialCards } from "./initialCards.js"
 //формы
 const formProfile = document.querySelector("#editForm")
 const formProfileNew = document.querySelector("#addForm")
@@ -111,7 +115,7 @@ function imageOpen(card, link) {
 }
 
 function createCard(value) {
-  const card = template.querySelector(".element").cloneNode(true)
+ /* const card = template.querySelector(".element").cloneNode(true)
   if (card) {
     const title = card.querySelector(".element__title")
     const mask = card.querySelector(".element__mask")
@@ -138,7 +142,8 @@ function createCard(value) {
           }
       })
     }
-  }
+  }*/
+  const card = new Card(value, ".element-template", imageOpen).generateCard();
   return card
 }
 
@@ -154,6 +159,9 @@ function render() {
 }
 
 render()
+
+
+
 
 function submitCardForm(evt) {
   evt.preventDefault()

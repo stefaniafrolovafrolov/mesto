@@ -1,3 +1,31 @@
+class FormValidator {
+
+  constructor(data, config) {
+    this._formElement = data.formElement;
+    this._inputElement = data.inputElement;
+    this._config = config;
+  }
+}
+
+  
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
 function disableSubmitButton(popup, config) {
   const buttonSave = popup.querySelector(config.submitButtonSelector)
   if (buttonSave) {
@@ -7,7 +35,12 @@ function disableSubmitButton(popup, config) {
   }
 }
 
-function showInputError(formElement, inputElement, config) {
+
+
+
+
+
+/*function showInputError(formElement, inputElement, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`)
   errorElement.classList.add(config.errorClass)
   errorElement.textContent = inputElement.validationMessage
@@ -69,4 +102,4 @@ function enableValidation({ formSelector, ...restConfig }) {
   })
 }
 
-enableValidation(validationConfig)
+enableValidation(validationConfig)*/

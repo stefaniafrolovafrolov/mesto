@@ -13,7 +13,7 @@
   <body class="root">
     <div class="page">
       <header class="header">
-        <img class="header__logo" src="./images/header-logo.svg" alt="Надписть на логотипе Mesto Russia">
+       <img class="header__logo" src="./images/header-logo.svg" alt="Надписть на логотипе Mesto Russia">
       </header>
       <main class="content">
         <section class="profile">
@@ -28,7 +28,7 @@
           <button class="profile__add-button" type="button"></button>
         </section>
         <section class="elements"></section>
-        <template id="element-template">
+        <template class="element-template" id="element-template">
           <div class="element">
             <button class="element__trash"></button>
             <img class="element__mask" src="#" alt="Изображения городов России">
@@ -84,9 +84,11 @@
         </figure>
       </div>
     </div>
+   <!-- <script src="./scripts/initialCards.js"></script>
+    <script src="./scripts/Card.js"></script>
     <script src="./scripts/validationConfig.js"></script>
-    <script src="./scripts/validate.js"></script>
-    <script src="./scripts/initialCards.js"></script>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/FormValidator.js"></script>-->
+    
+    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

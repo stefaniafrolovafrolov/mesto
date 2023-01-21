@@ -21,8 +21,8 @@ class Card {
   }
 
   _likeCard = () => {
-    this._like.classList.toggle(".element__like-button_active")
-    console.log(this._like);
+    this._like.classList.toggle("element__like-button_active")
+    console.log(this._like)
   }
 
   _deleteCard = () => {
@@ -42,7 +42,6 @@ class Card {
     this._mask.alt = this._name
     this._title.textContent = this._name
   }
-
 }
 
 export { Card }

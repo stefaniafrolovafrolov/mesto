@@ -1,7 +1,13 @@
-
+//импорты файлов
 import { Card } from "./Card.js"
 import { validationConfig } from "./validationConfig.js"
+import { FormValidator } from "./FormValidator.js"
 import { initialCards } from "./initialCards.js"
+
+//конфиг
+const formValidation = new FormValidator(validationConfig)
+formValidation.enableValidation()
+
 //формы
 const formProfile = document.querySelector("#editForm")
 const formProfileNew = document.querySelector("#addForm")
@@ -59,12 +65,12 @@ function closePopup(popup) {
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileTitle.textContent
   jobInput.value = profileParag.textContent
-  disableSubmitButton(popupEditProfile, validationConfig)
+  formValidation.disableSubmitButton(popupEditProfile)
   openPopup(popupEditProfile)
 })
 
 profileAddButton.addEventListener("click", () => {
-  disableSubmitButton(popupAddCard, validationConfig)
+  formValidation.disableSubmitButton(popupAddCard)
   openPopup(popupAddCard)
 })
 
@@ -115,35 +121,7 @@ function imageOpen(card, link) {
 }
 
 function createCard(value) {
- /* const card = template.querySelector(".element").cloneNode(true)
-  if (card) {
-    const title = card.querySelector(".element__title")
-    const mask = card.querySelector(".element__mask")
-    const trash = card.querySelector(".element__trash")
-    const like = card.querySelector(".element__like-button")
-    if (title && mask && trash && like) {
-      title.textContent = value.name
-      mask.src = value.link
-      mask.alt = title.textContent
-      mask.addEventListener("click", () => {
-        imageOpen(title.textContent, value.link)
-      })
-      trash.addEventListener("click", () => {
-        card.remove()
-      })
-
-      like.addEventListener("click", () => {
-        const className = "element__like-button_active"
-        if (like)
-          if (like.classList.contains(className)) {
-            like.classList.remove(className)
-          } else {
-            like.classList.add(className)
-          }
-      })
-    }
-  }*/
-  const card = new Card(value, ".element-template", imageOpen).generateCard();
+  const card = new Card(value, ".element-template", imageOpen).generateCard()
   return card
 }
 
@@ -159,9 +137,6 @@ function render() {
 }
 
 render()
-
-
-
 
 function submitCardForm(evt) {
   evt.preventDefault()

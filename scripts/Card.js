@@ -22,7 +22,6 @@ class Card {
 
   _likeCard = () => {
     this._like.classList.toggle("element__like-button_active")
-    console.log(this._like)
   }
 
   _deleteCard = () => {

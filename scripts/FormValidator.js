@@ -1,77 +1,73 @@
 class FormValidator {
-  constructor(config) {
+  constructor(config, popup) {
+    this._form = popup
     this._config = config
-  }
-
-  disableSubmitButton(popup) {
-    const buttonSave = popup.querySelector(this._config.submitButtonSelector)
-    if (buttonSave) {
-      buttonSave.classList.remove(this._config.activeButtonClass)
-      buttonSave.classList.add(this._config.inactiveButtonClass)
-      buttonSave.disabled = true
-    }
+    this._buttonSave = this._form.querySelector(
+      this._config.submitButtonSelector
+    )
+    this._inputList = Array.from(
+      this._form.querySelectorAll(this._config.inputSelector)
+    )
+    /*this._setEventListeners()*/
   }
 
   enableValidation() {
-    const formList = Array.from(
-      document.querySelectorAll(this._config.formSelector)
-    )
-
-    formList.forEach((formElement) => {
-      this._setEventListeners(formElement, this._config)
-    })
+    this._setEventListeners()
   }
 
-  _showInputError(inputElement, popup) {
-    const errorElement = popup.querySelector(`.${inputElement.id}-error`)
+  disableSubmitButton() {
+    this._buttonSave.classList.remove(this._config.activeButtonClass)
+    this._buttonSave.classList.add(this._config.inactiveButtonClass)
+    this._buttonSave.disabled = true
+  }
+
+  enableSubmitButton() {
+    this._buttonSave.classList.add(this._config.activeButtonClass)
+    this._buttonSave.classList.remove(this._config.inactiveButtonClass)
+    this._buttonSave.disabled = false
+  }
+
+  _showInputError(inputElement) {
+    const errorElement = this._form.querySelector(`.${inputElement.id}-error`)
     errorElement.classList.add(this._config.errorClass)
     errorElement.textContent = inputElement.validationMessage
     inputElement.classList.add(this._config.inputErrorClass)
   }
 
-  _hideInputError(inputElement, popup) {
-    const errorElement = popup.querySelector(`.${inputElement.id}-error`)
+  _hideInputError(inputElement) {
+    const errorElement = this._form.querySelector(`.${inputElement.id}-error`)
     errorElement.classList.remove(this._config.errorClass)
     errorElement.textContent = ""
     inputElement.classList.remove(this._config.inputErrorClass)
   }
 
-  _checkInputValidity(inputElement, popup) {
+  _checkInputValidity(inputElement) {
     if (inputElement.validity.valid) {
-      this._hideInputError(inputElement, popup)
+      this._hideInputError(inputElement)
     } else {
-      this._showInputError(inputElement, popup)
+      this._showInputError(inputElement)
     }
   }
 
-  _hasInvalidInput(inputList) {
-    return inputList.some((inputElement) => !inputElement.validity.valid)
+  _hasInvalidInput() {
+    return this._inputList.some((inputElement) => !inputElement.validity.valid)
   }
 
-  _toggleButtonState(inputList, buttonElement) {
-    if (this._hasInvalidInput(inputList)) {
-      buttonElement.classList.remove(this._config.activeButtonClass)
-      buttonElement.classList.add(this._config.inactiveButtonClass)
-      buttonElement.disabled = true
+  _toggleButtonState() {
+    if (this._hasInvalidInput()) {
+      this.disableSubmitButton()
     } else {
-      buttonElement.classList.add(this._config.activeButtonClass)
-      buttonElement.classList.remove(this._config.inactiveButtonClass)
-      buttonElement.disabled = false
+      this.enableSubmitButton()
     }
   }
 
-  _setEventListeners(popup) {
-    const inputList = Array.from(
-      popup.querySelectorAll(this._config.inputSelector)
-    )
-    const buttonElement = popup.querySelector(this._config.submitButtonSelector)
+  _setEventListeners() {
+    this._toggleButtonState(this._inputList, this._buttonSave)
 
-    this._toggleButtonState(inputList, buttonElement)
-
-    inputList.forEach((inputElement) => {
+    this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
-        this._checkInputValidity(inputElement, popup)
-        this._toggleButtonState(inputList, buttonElement)
+        this._checkInputValidity(inputElement)
+        this._toggleButtonState(this._inputList, this._buttonSave)
       })
     })
   }

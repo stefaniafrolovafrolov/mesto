@@ -4,10 +4,6 @@ import { validationConfig } from "./validationConfig.js"
 import { FormValidator } from "./FormValidator.js"
 import { initialCards } from "./initialCards.js"
 
-//конфиг
-const formValidation = new FormValidator(validationConfig)
-formValidation.enableValidation()
-
 //формы
 const formProfile = document.querySelector("#editForm")
 const formProfileNew = document.querySelector("#addForm")
@@ -16,6 +12,18 @@ const formProfileNew = document.querySelector("#addForm")
 const popupEditProfile = document.querySelector(".popup_type_edit-profile")
 const popupAddCard = document.querySelector(".popup_type_add-card")
 const popupImage = document.querySelector(".popup_type_image")
+
+//конфиг
+const popupEditProfileValidation = new FormValidator(
+  validationConfig,
+  popupEditProfile
+)
+popupEditProfileValidation.enableValidation()
+const popupAddCardValidation = new FormValidator(
+  validationConfig,
+  popupAddCard
+)
+popupAddCardValidation.enableValidation()
 
 //кнопки
 const profileAddButton = document.querySelector(".profile__add-button")
@@ -65,12 +73,12 @@ function closePopup(popup) {
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileTitle.textContent
   jobInput.value = profileParag.textContent
-  formValidation.disableSubmitButton(popupEditProfile)
+  popupEditProfileValidation.disableSubmitButton()
   openPopup(popupEditProfile)
 })
 
 profileAddButton.addEventListener("click", () => {
-  formValidation.disableSubmitButton(popupAddCard)
+  popupAddCardValidation.disableSubmitButton()
   openPopup(popupAddCard)
 })
 
@@ -113,7 +121,7 @@ function submitProfileForm(evt) {
 
 formProfile.addEventListener("submit", submitProfileForm)
 
-function imageOpen(card, link) {
+function openImage(card, link) {
   imageImg.src = link
   imageImg.alt = card
   imageTitle.textContent = card
@@ -121,7 +129,7 @@ function imageOpen(card, link) {
 }
 
 function createCard(value) {
-  const card = new Card(value, ".element-template", imageOpen).generateCard()
+  const card = new Card(value, ".element-template", openImage).generateCard()
   return card
 }
 

@@ -1,0 +1,23 @@
+{
+  "name": "mesto",
+  "version": "0.0.1",
+  "description": "Данный проект учит верстке адаптивного сайта, с созданием модальных окон и програмированию на языке java-script.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefaniafrolovafrolov/mesto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefaniafrolovafrolov/mesto/issues"
+  },
+  "homepage": "https://github.com/stefaniafrolovafrolov/mesto#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

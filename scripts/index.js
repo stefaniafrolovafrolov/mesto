@@ -41,10 +41,10 @@ const profileTitle = document.querySelector(".profile__title")
 const profileParag = document.querySelector(".profile__subtitle")
 
 const cardsContainer = document.querySelector(".elements")
-const template = document.querySelector("#element-template").content
+/*const template = document.querySelector("#element-template").content
 
 const imageOpenPopup = document.querySelector(".popup__image-container")
-const imageClosePopup = document.querySelector(".popup__close")
+const imageClosePopup = document.querySelector(".popup__close")*/
 const imageImg = document.querySelector(".popup__image")
 const imageTitle = document.querySelector(".popup__image-title")
 

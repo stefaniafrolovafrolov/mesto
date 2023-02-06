@@ -8,7 +8,6 @@ class FormValidator {
     this._inputList = Array.from(
       this._form.querySelectorAll(this._config.inputSelector)
     )
-    /*this._setEventListeners()*/
   }
 
   enableValidation() {

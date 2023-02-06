@@ -1,33 +1,32 @@
-class PopupWithForm extends Popup {
+import Popup from "../components/Popup.js"
 
-constructor(popupSelector, collbackSubmit) {
+export default class PopupWithForm extends Popup {
+  constructor(popupSelector, callbackSubmit) {
     super(popupSelector)
-    this._collbackSubmit = collbackSubmit
-    this._values = {}
-}
-
-_getInputValues() {
-    this._values = this._collbackSubmit()
-}
-
-close() {
-    this._popup.classList.remove("popup_opened")
-    this.delEventListeners()
-    this._popup.reset()
+    this._callbackSubmit = callbackSubmit
+    this._form = this._popup.querySelector(".popup__form")
+    this._inputs = [...this._form.querySelectorAll(".popup__input")]
   }
 
-setEventListeners() {
-    this._popup.submit.addEventListener("submit", this._getInputValues)
-    document.addEventListener("keydown", this._handleEscClose)
-    document.addEventListener("click", this._handleClose)
+  _getInputValues() {
+    const values = {}
+    this._inputs.forEach((input) => {
+      values[input.name] = input.value
+    })
+    return values
   }
 
-delEventListeners() {
-    this._popup.submit.removeEventListener("submit", this._getInputValues)
-    document.removeEventListener("keydown", this._handleEscClose)
-    document.removeEventListener("click", this._handleClose)
+  close() {
+    super.close()
+    this._form.reset()
   }
 
+  setEventListeners() {
+    super.setEventListeners()
+    this._form.addEventListener("submit", (event) => {
+      event.preventDefault()
+
+      this._callbackSubmit(this._getInputValues())
+    })
+  }
 }
-
-export { PopupWithForm }

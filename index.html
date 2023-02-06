@@ -27,7 +27,8 @@
           </div>
           <button class="profile__add-button" type="button"></button>
         </section>
-        <section class="elements"></section>
+        <section class="elements">
+         </section>
         <template class="element-template" id="element-template">
           <div class="element">
             <button class="element__trash"></button>
@@ -65,11 +66,11 @@
           <h2 class="popup__title">Новое место</h2>
           <form class="popup__form" name="addForm" id="addForm" novalidate>
             <label class="popup__label">
-              <input id="nameInputNew" class="popup__input popup__input_type_image-name" name="nameInputNew" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+              <input id="nameInputNew" class="popup__input popup__input_type_image-name" name="name" type="text" placeholder="Название" minlength="2" maxlength="30" required>
               <span class="nameInputNew-error error"></span>
             </label>
             <label class="popup__label">
-              <input id="linkInputNew" class="popup__input popup__input_type_image-link" name="linkInputNew" type="url" placeholder="Ссылка на картинку" required>
+              <input id="linkInputNew" class="popup__input popup__input_type_image-link" name="link" type="url" placeholder="Ссылка на картинку" required>
               <span class="linkInputNew-error error"></span>
             </label>
             <button class="popup__save popup__save_disabled" type="submit">Создать</button>
@@ -83,7 +84,7 @@
           <button class="popup__close" type="button"></button>
         </figure>
       </div>
-    </div>=
+    </div>
    <script type="module" src="./pages/index.js"></script>
   </body>
 </html>

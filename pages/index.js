@@ -1,138 +1,95 @@
 //импорты переменных и классов
-import { Card } from "../components/Card.js"
+import Card from "../components/Card.js"
+import { popupConfig } from "../components/popupConfig.js"
 import { validationConfig } from "../components/validationConfig.js"
 import { FormValidator } from "../components/FormValidator.js"
 import { initialCards } from "../components/initialCards.js"
-import { formProfile, formProfileNew, popupEditProfile, popupAddCard, popupImage,
-  profileAddButton, profileEditButton, buttonClosePopupProfile, buttonClosePopupAddCard,
-  buttonClosePopupImage, nameInput, jobInput, profileTitle, profileParag, cardsContainer,
-  imageImg, imageTitle, nameInputNew, linkInputNew } from "../utils/constants.js"
-
+import {
+  profileAddButton,
+  profileEditButton,
+  editInputName,
+  editJobInput,
+  formEditProfile,
+  formAddProfile,
+} from "../utils/constants.js"
 import Section from "../components/Section.js"
-import { Popup } from "../components/Popup.js"
-import { PopupWithImage } from "../components/PopupWithImage.js"
-import { PopupWithForm } from "../components/PopupWithForm.js"
-import { UserInfo } from "../components/UserInfo.js"
+import PopupWithImage from "../components/PopupWithImage.js"
+import PopupWithForm from "../components/PopupWithForm.js"
+import UserInfo from "../components/UserInfo.js"
 
-//конфиг
-const popupEditProfileValidation = new FormValidator(
-  validationConfig,
-  popupEditProfile
+//ФУНКЦИИ
+
+//передача текста на страницу профиля редактирования полей Имя, О себе
+function profileEditCallbackSubmit(value) {
+  userInfo.setUserInfo(value.nameInput, value.jobInput)
+  classEditPopup.close()
+}
+
+function createCard(item) {
+  return new Card(item, ".element-template", () =>
+    popupOpenImage.open(item)
+  ).generateCard()
+}
+
+//функция открытия попапа редактирования профиля
+function openEditProfile() {
+  const { title, subtitle } = userInfo.getUserInfo()
+  editInputName.value = title
+  editJobInput.value = subtitle
+  formEditValidator.disableSubmitButton()
+  classEditPopup.open()
+}
+
+//функция открытия попапа для создания новой карточки
+function popupAddCardProfile() {
+  formCardValidator.disableSubmitButton()
+  classCardPopup.open()
+}
+
+//создание класса редактирования профиля
+const classEditPopup = new PopupWithForm(
+  popupConfig.popupEditSelector,
+  profileEditCallbackSubmit
 )
-popupEditProfileValidation.enableValidation()
-const popupAddCardValidation = new FormValidator(
-  validationConfig,
-  popupAddCard
+classEditPopup.setEventListeners()
+
+//Класс UserInfo отвечает за управление отображением информации о пользователе на странице.
+const userInfo = new UserInfo({
+  title: ".profile__title",
+  subtitle: ".profile__subtitle",
+})
+
+//отрисовка карточек на странице из обьекта initialCards
+const cardSection = new Section(
+  {
+    renderer: (item) => cardSection.addItem(createCard(item)),
+  },
+  ".elements"
 )
-popupAddCardValidation.enableValidation()
 
-
-//функция открытия попапов
-function openPopup(popup) {
-  open(popup)
-  document.addEventListener("keydown", closePopupOnEscape)
- /* popup.classList.add("popup_opened")*/
-}
-
-function closePopupOnEscape(evt) {
- /* if (evt.code == "Escape") {
-    const popup = document.querySelector(".popup_opened")
-    closePopup(popup)
-  }*/
-}
-
-//функция закрытия попапов
-function closePopup(popup) {
-  close(popup)
- /* popup.classList.remove("popup_opened")*/
-  document.removeEventListener("keydown", closePopupOnEscape)
-}
-
-profileEditButton.addEventListener("click", () => {
-  nameInput.value = profileTitle.textContent
-  jobInput.value = profileParag.textContent
-  popupEditProfileValidation.disableSubmitButton()
-  
-  openPopup(popupEditProfile)
-})
-
-profileAddButton.addEventListener("click", () => {
-  popupAddCardValidation.disableSubmitButton()
-  openPopup(popupAddCard)
-})
-
-buttonClosePopupProfile.addEventListener("click", () => {
-  closePopup(popupEditProfile)
-})
-
-buttonClosePopupAddCard.addEventListener("click", () => {
-  closePopup(popupAddCard)
-})
-
-buttonClosePopupImage.addEventListener("click", () => {
-  closePopup(popupImage)
-})
-
-popupEditProfile.addEventListener("click", (evt) => {
-  if (evt.currentTarget === evt.target) {
-    closePopup(popupEditProfile)
+const classCardPopup = new PopupWithForm(
+  popupConfig.popupAddCardSelector,
+  (item) => {
+    cardSection.addItem(createCard(item))
+    classCardPopup.close()
   }
-})
+)
+classCardPopup.setEventListeners()
 
-popupAddCard.addEventListener("click", (evt) => {
-  if (evt.currentTarget === evt.target) {
-    closePopup(popupAddCard)
-  }
-})
+//создается обьект класса PopupWithImage
+const popupOpenImage = new PopupWithImage(popupConfig.popupImageSelector)
+popupOpenImage.setEventListeners()
 
-popupImage.addEventListener("click", (evt) => {
-  if (evt.currentTarget === evt.target) {
-    closePopup(popupImage)
-  }
-})
+//валидация формы попап редактирования профиля
+const formEditValidator = new FormValidator(validationConfig, formEditProfile)
+formEditValidator.enableValidation()
 
-function submitProfileForm(evt) {
-  evt.preventDefault()
-  profileTitle.textContent = nameInput.value
-  profileParag.textContent = jobInput.value
-  closePopup(popupEditProfile)
-}
+//валидация формы попап создания карточек
+const formCardValidator = new FormValidator(validationConfig, formAddProfile)
+formCardValidator.enableValidation()
 
-formProfile.addEventListener("submit", submitProfileForm)
+//кнопки открытия попапов
+profileAddButton.addEventListener("click", () => popupAddCardProfile())
+profileEditButton.addEventListener("click", () => openEditProfile())
 
-function openImage(card, link) {
-  imageImg.src = link
-  imageImg.alt = card
-  imageTitle.textContent = card
-  openPopup(popupImage)
-}
-
-function createCard(value) {
-  const card = new Card(value, ".element-template", openImage).generateCard()
-  return card
-}
-
-function renderCard(card, container) {
-  container.prepend(card)
-}
-
-function render() {
-  initialCards.reverse().forEach((value) => {
-    const newCard = createCard(value)
-    if (newCard) renderCard(newCard, cardsContainer)
-  })
-}
-
-render()
-
-function submitCardForm(evt) {
-  evt.preventDefault()
-  const name = nameInputNew.value
-  const link = linkInputNew.value
-  const newCard = createCard({ name, link })
-  if (newCard) renderCard(newCard, cardsContainer)
-  closePopup(popupAddCard)
-  formProfileNew.reset()
-}
-
-formProfileNew.addEventListener("submit", submitCardForm)
+cardSection.renderItems(initialCards.reverse())

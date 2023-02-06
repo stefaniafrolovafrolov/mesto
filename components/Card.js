@@ -1,9 +1,9 @@
-class Card {
-  constructor(data, templateSelector, clickImageHandle) {
+export default class Card {
+  constructor(data, templateSelector, handleCardClick) {
     this._name = data.name
     this._link = data.link
     this._templateSelector = templateSelector
-    this._clickImageHandle = clickImageHandle
+    this._handleCardClick = handleCardClick
   }
 
   generateCard = () => {
@@ -32,7 +32,7 @@ class Card {
     this._trash.addEventListener("click", () => this._deleteCard())
     this._like.addEventListener("click", () => this._likeCard())
     this._mask.addEventListener("click", () =>
-      this._clickImageHandle(this._name, this._link)
+      this._handleCardClick(this._name, this._link)
     )
   }
 
@@ -42,5 +42,3 @@ class Card {
     this._title.textContent = this._name
   }
 }
-
-export { Card }

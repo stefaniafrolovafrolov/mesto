@@ -6,19 +6,20 @@
     <meta name="description" content="Лендинг page с карточками городов России.">
     <meta name="author" content="Vadim Frolov">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./pages/index.css">
-    <link rel="shortcut icon" href="./images/logo-icon.png">
+    <!-- Подключили в Webpack.config плагин по подключению index.css, поэтому тут подключение убираем!
+    <link rel="stylesheet" href="./pages/index.css">-->
+    <link rel="shortcut icon" href="<%=require('./images/logo-icon.png')%>">
     <title>Проектная работа Mesto</title>
-  </head>
+    </head>
   <body class="root">
     <div class="page">
       <header class="header">
-       <img class="header__logo" src="./images/header-logo.svg" alt="Надписть на логотипе Mesto Russia">
+       <img class="header__logo" src="<%=require('./images/header-logo.svg')%>" alt="Надписть на логотипе Mesto Russia">
       </header>
       <main class="content">
         <section class="profile">
           <div class="profile__container">
-            <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Изображенна фото Жак-Ив Кусто в красной шапке">
+            <img class="profile__avatar" src="<%=require('./images/profile-avatar.jpg')%>" alt="Изображенна фото Жак-Ив Кусто в красной шапке">
             <div class="profile__info">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
               <button class="profile__edit-button" id="myBtn" type="button"></button>
@@ -85,6 +86,7 @@
         </figure>
       </div>
     </div>
-   <script type="module" src="./pages/index.js"></script>
+  <!-- Удаляю подключение скрипта, так как дальше работает Webpack
+    <script type="module" src="./pages/index.js"></script>  -->
   </body>
 </html>

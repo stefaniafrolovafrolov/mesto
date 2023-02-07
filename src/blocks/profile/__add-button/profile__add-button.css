@@ -3,7 +3,7 @@
   padding: 0;
   border: none;
   background-color: rgba(0, 0, 0, 0);
-  background-image: url(../../../images/Add\ Button.svg);
+  background-image: url(../../../images/Add-Button.svg);
   width: 150px;
   height: 50px;
 }
@@ -16,14 +16,14 @@
 
 @media screen and (max-width: 768px) {
   .profile__add-button {
-    background-image: url(../../../images/Add\ Button.png);
+    background-image: url(../../../images/Add-Button.png);
     width: 282px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .profile__add-button {
-    background-image: url(../../../images/Add\ Button.png);
+    background-image: url(../../../images/Add-Button.png);
     width: 282px;
   }
 }

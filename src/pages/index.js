@@ -1,3 +1,6 @@
+//подключаю index.css к файлу
+import "./index.css"
+
 //импорты переменных и классов
 import Card from "../components/Card.js"
 import { popupConfig } from "../components/popupConfig.js"

@@ -10,7 +10,7 @@ module.exports = {
   // devtool: 'inline-source-map',
   output: {
     filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "dist"),
     clean: true,
   },
   module: {
@@ -52,6 +52,7 @@ module.exports = {
     new MiniCssExtractPlugin(),
   ],
   devServer: {
+    static: path.resolve(__dirname, './dist'),
     port: 8080,
     open: true,
     hot: true,

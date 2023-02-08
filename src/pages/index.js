@@ -1,12 +1,10 @@
 //подключаю index.css к файлу
 import "./index.css"
 
-//импорты переменных и классов
-import Card from "../components/Card.js"
-import { popupConfig } from "../components/popupConfig.js"
-import { validationConfig } from "../components/validationConfig.js"
-import { FormValidator } from "../components/FormValidator.js"
-import { initialCards } from "../components/initialCards.js"
+//импорты переменных
+import { popupConfig } from "../utils/popupConfig.js"
+import { validationConfig } from "../utils/validationConfig.js"
+import { initialCards } from "../utils/initialCards.js"
 import {
   profileAddButton,
   profileEditButton,
@@ -15,6 +13,10 @@ import {
   formEditProfile,
   formAddProfile,
 } from "../utils/constants.js"
+
+//импорты классов
+import Card from "../components/Card.js"
+import { FormValidator } from "../components/FormValidator.js"
 import Section from "../components/Section.js"
 import PopupWithImage from "../components/PopupWithImage.js"
 import PopupWithForm from "../components/PopupWithForm.js"
@@ -22,21 +24,28 @@ import UserInfo from "../components/UserInfo.js"
 
 //ФУНКЦИИ
 
-//передача текста на страницу профиля редактирования полей Имя, О себе
-function profileEditCallbackSubmit(value) {
-  userInfo.setUserInfo(value.nameInput, value.jobInput)
-  classEditPopup.close()
-}
-
 function createCard(item) {
   return new Card(item, ".element-template", () =>
     popupOpenImage.open(item)
   ).generateCard()
 }
 
+//передача текста на страницу профиля редактирования полей Имя, О себе
+function formValues(value) {
+  userInfo.setUserInfo(value.nameInput, value.jobInput)
+  classEditPopup.close()
+}
+
+//Класс UserInfo отвечает за управление отображением информации о пользователе на странице.
+const userInfo = new UserInfo({
+  titleSelector: ".profile__title",
+  subtitleSelector: ".profile__subtitle",
+})
+
 //функция открытия попапа редактирования профиля
 function openEditProfile() {
   const { title, subtitle } = userInfo.getUserInfo()
+  console.log(title)
   editInputName.value = title
   editJobInput.value = subtitle
   formEditValidator.disableSubmitButton()
@@ -52,15 +61,9 @@ function popupAddCardProfile() {
 //создание класса редактирования профиля
 const classEditPopup = new PopupWithForm(
   popupConfig.popupEditSelector,
-  profileEditCallbackSubmit
+  formValues
 )
 classEditPopup.setEventListeners()
-
-//Класс UserInfo отвечает за управление отображением информации о пользователе на странице.
-const userInfo = new UserInfo({
-  title: ".profile__title",
-  subtitle: ".profile__subtitle",
-})
 
 //отрисовка карточек на странице из обьекта initialCards
 const cardSection = new Section(

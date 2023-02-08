@@ -1,4 +1,5 @@
 .popup__save_disabled {
-    background: #E5E5E5;
-  }
-  
+  border: 1px solid #e5e5e5;
+  background-color: #ffffff;
+  color: #e5e5e5;
+}

@@ -9,7 +9,8 @@ export default class Card {
   generateCard = () => {
     this._cardElement = document
       .querySelector(this._templateSelector)
-      .content.cloneNode(true)
+      .content.querySelector(".element")
+      .cloneNode(true)
     this._like = this._cardElement.querySelector(".element__like-button")
     this._title = this._cardElement.querySelector(".element__title")
     this._mask = this._cardElement.querySelector(".element__mask")
@@ -25,7 +26,7 @@ export default class Card {
   }
 
   _deleteCard = () => {
-    this._trash.closest(".element").remove()
+    this._cardElement.remove()
   }
 
   _setEventHandlers = () => {

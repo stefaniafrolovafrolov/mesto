@@ -9,6 +9,7 @@
   object-fit: cover;
   cursor: pointer;
   transition: 0.8s ease-in-out;
+  background: black;
 }
 
 .element__mask:hover {

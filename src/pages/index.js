@@ -45,7 +45,6 @@ const userInfo = new UserInfo({
 //функция открытия попапа редактирования профиля
 function openEditProfile() {
   const { title, subtitle } = userInfo.getUserInfo()
-  console.log(title)
   editInputName.value = title
   editJobInput.value = subtitle
   formEditValidator.disableSubmitButton()

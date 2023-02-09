@@ -4,7 +4,7 @@
   "description": "Данный проект учит верстке адаптивного сайта, с созданием модальных окон и програмированию на языке java-script.",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && webpack --mode production",
+    "build": "webpack --mode production --devtool inline-nosources-source-map",
     "dev": "webpack serve"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "@babel/preset-env": "^7.20.2",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.3",
     "cssnano": "^5.1.14",
     "html-webpack-plugin": "^5.5.0",
@@ -32,6 +33,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "build": "^0.1.4",
     "core-js": "^3.27.2",
     "dist": "^0.1.2"
   }

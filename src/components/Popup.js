@@ -28,7 +28,7 @@ export default class Popup {
     this.delEventListeners()
   }
 
-  _handleSubmit(evt) {
+  _handleSubmit() {
     //Просто вызываем закрытие
     this.close()
   }

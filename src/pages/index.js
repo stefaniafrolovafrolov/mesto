@@ -22,6 +22,28 @@ import PopupWithImage from "../components/PopupWithImage.js"
 import PopupWithForm from "../components/PopupWithForm.js"
 import UserInfo from "../components/UserInfo.js"
 
+
+
+
+//удалить эти строки создавались для верстки попапов тестовое открытие
+/*const avatar = document.querySelector(".profile__edit-avatar")
+console.log(avatar);
+const popup = document.querySelector(".popup_type_confirmation")
+const popup = document.querySelector(".popup_type_edit-avatar")
+console.log(popup)
+
+function open(popup) {
+  popup.classList.add("popup_opened")
+}
+
+avatar.addEventListener("click", () => {
+  open(popup)
+})*/
+
+
+
+
+
 //ФУНКЦИИ
 
 function createCard(item) {

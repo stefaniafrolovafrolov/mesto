@@ -19,7 +19,12 @@
     <main class="content">
       <section class="profile">
         <div class="profile__container">
-          <img class="profile__avatar" src="<%=require('./images/profile-avatar.jpg')%>" alt="Изображенна фото Жак-Ив Кусто в красной шапке">
+          <div class="profile__wrapper-relative">
+            <img class="profile__avatar" src="<%=require('./images/profile-avatar.jpg')%>" alt="Изображенна фото Жак-Ив Кусто в красной шапке">
+            <button class="profile__edit-avatar" type="button">
+              <img class="profile__edit-pen" src="<%=require('./images/profile__edit-avatar.svg')%>" alt="изображение письменной ручки">
+            </button>
+          </div>
           <div class="profile__info">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
             <button class="profile__edit-button" id="myBtn" type="button"></button>
@@ -36,7 +41,10 @@
           <img class="element__mask" src="#" alt="Изображения городов России">
           <div class="element__group">
             <h2 class="element__title"></h2>
-            <button class="element__like-button"></button>
+            <div class="element__container-like">
+              <button class="element__like-button"></button>
+              <p class="element__count-like"></p>
+            </div>
           </div>
         </div>
       </template>
@@ -57,7 +65,7 @@
             <input id="jobInput" class="popup__input popup__input_type_job" name="jobInput" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
             <span class="jobInput-error error"></span>
           </label>
-          <button name="submit" class="popup__save popup__save_disabled" type="submit">Сохранить</button>
+          <button name="submit" class="popup__save popup__save_disabled" type="submit">Сохранение...</button>
         </form>
       </div>
     </div>
@@ -84,6 +92,26 @@
         <figcaption class="popup__image-title"></figcaption>
         <button class="popup__close" type="button"></button>
       </figure>
+    </div>
+    <div class="popup popup_type_confirmation">
+      <div class="popup__confirmation-container">
+        <button class="popup__close" type="button"></button>
+        <h2 class="popup__title popup__title_margin">Вы уверены?</h2>
+        <button class="popup__save popup__save_margin" type="submit">Да</button>
+      </div>
+    </div>
+    <div class="popup popup_type_edit-avatar">
+      <div class="popup__avatar-container">
+        <button class="popup__close" type="button"></button>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <form class="popup__form" name="editAvatarForm" id="editAvatarForm" novalidate>
+          <label class="popup__label">
+            <input id="nameInputAvatar" class="popup__input popup__input_type_link-avatar" name="linkAvatar" type="url" placeholder="Введите ссылку URL" required>
+            <span class="nameInputAvatar-error error"></span>
+          </label>
+          <button class="popup__save" type="submit">Сохранить</button>
+        </form>
+      </div>
     </div>
   </div>
 </body>

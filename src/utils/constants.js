@@ -3,6 +3,11 @@ const profileUpdateAvatar = document.querySelector(".profile__edit-avatar")
 const profileAddButton = document.querySelector(".profile__add-button")
 const profileEditButton = document.querySelector(".profile__edit-button")
 
+//константы профиля
+const nameProfile = document.querySelector(".profile__title")
+const aboutProfile = document.querySelector(".profile__subtitle")
+const avatarProfile = document.querySelector(".profile__avatar")
+
 //находим форму редактирования по ее name
 const formEditProfile = document.forms.editForm
 
@@ -12,17 +17,14 @@ const formAddProfile = document.forms.addForm
 //находим форму обновления аватара по ее name
 const formUpdateAvatar = document.forms.editAvatarForm
 
-//находим поля в форме редактирования по их name
-const editInputName = formEditProfile.elements.nameInput
-const editJobInput = formEditProfile.elements.jobInput
-
 export {
   profileAddButton,
   profileEditButton,
   formEditProfile,
-  editInputName,
-  editJobInput,
   formAddProfile,
   formUpdateAvatar,
-  profileUpdateAvatar
+  profileUpdateAvatar,
+  nameProfile,
+  aboutProfile,
+  avatarProfile,
 }

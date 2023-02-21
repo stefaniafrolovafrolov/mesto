@@ -51,6 +51,7 @@ export default class Popup {
 
   setEventListeners() {
     //Установка обработчиков от popup на document
+    console.log("setEventListeners from Popup")
     document.addEventListener("keydown", this._clickEscClose)
     document.addEventListener("mouseup", this._clickClose)
   }

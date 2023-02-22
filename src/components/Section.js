@@ -9,7 +9,7 @@ export default class Section {
   }
 
   renderItems(items) {
-    items.forEach((item) => {
+    items.reverse().forEach((item) => {
       return this._renderer(item)
     })
   }

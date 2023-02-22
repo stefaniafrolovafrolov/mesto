@@ -10,7 +10,7 @@ export default class Popup {
     this._clickEscClose = this._handleEscClose.bind(this)
     //Биндим к функции this._handleClose параметр this
     this._clickClose = this._handleClose.bind(this)
-    //Устанавливаем (однократно) обработчик нажатия на кнопку submit
+    //Устанавливаем (однократно) обработчик нажатия на кнопку крестика
     this._button.addEventListener("click", this._clickCloseButton)
   }
 
@@ -51,7 +51,6 @@ export default class Popup {
 
   setEventListeners() {
     //Установка обработчиков от popup на document
-    console.log("setEventListeners from Popup")
     document.addEventListener("keydown", this._clickEscClose)
     document.addEventListener("mouseup", this._clickClose)
   }

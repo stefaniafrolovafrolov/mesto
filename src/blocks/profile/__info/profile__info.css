@@ -13,6 +13,13 @@
   }
 }
 
+@media screen and (max-width: 440px) {
+  .profile__info {
+    width: 70%;
+    padding: 22px 0 25px 15px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .profile__info {
     padding: 11px 19px 30px 19px;

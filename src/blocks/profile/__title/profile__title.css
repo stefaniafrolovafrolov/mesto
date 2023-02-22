@@ -7,7 +7,6 @@
   font-size: 42px;
   line-height: 48px;
   color: #fff;
-  text-align: center;
   padding-bottom: 6px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -21,25 +20,20 @@
   }
 }
 
+@media screen and (max-width: 680px) {
+  .profile__title {
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 457px) {
   .profile__title {
     white-space: nowrap;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .profile__title {
-    font-size: 30px;
-    line-height: 36px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .profile__title {
+    max-width: 189px;
+    font-weight: 500;
     font-size: 27px;
     line-height: 33px;
-    max-width: 189px;
-    padding-bottom: 8px;
     align-self: center;
+    padding-bottom: 8px;
   }
 }

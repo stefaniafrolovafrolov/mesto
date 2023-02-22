@@ -75,7 +75,6 @@ async function handleSubmitFormEditProfile(data) {
   try {
     const userProfile = await api.editProfileUserInfo(data)
     user.setUserInfo(userProfile)
-    popupEdit.close()
   } catch (error) {
     return console.log(`Ошибка: ${error}`)
   }
@@ -86,8 +85,6 @@ async function handleSubmitFormUpdateAvatar(data) {
   try {
     const userProfile = await api.updateProfileUserAvatar(data)
     user.setUserInfo(userProfile)
-    avatarProfile.src = userProfile.avatar
-    popupAvatar.close()
   } catch (error) {
     return console.log(`Ошибка: ${error}`)
   }
@@ -98,7 +95,6 @@ async function handleSubmitFormAddCard(data) {
   try {
     const newCard = await api.addNewCard(data)
     cardList.addItem(createCard(newCard))
-    popupAdd.close()
   } catch (error) {
     return console.log(`Ошибка: ${error}`)
   }
@@ -142,7 +138,6 @@ profileUpdateAvatar.addEventListener(
   "click",
   () => {
     popupAvatar.open()
-    popupAvatar.setInputValue(user.getUserInfo())
     validatorFormUpdateAvatar.disableSubmitButton()
   },
   false
@@ -233,7 +228,6 @@ Promise.all([api.getRealUserInfo(), api.getInitialCards()])
 .about
     } else console.log(error_title + " не найден Edit popup__input_type_job")*/
     userId = userProfile._id
-    avatarProfile.src = userProfile.avatar
     cardList.renderItems(cards)
   })
 

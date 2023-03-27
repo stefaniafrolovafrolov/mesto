@@ -204,7 +204,7 @@ console.log()
 const api = new Api({
   baseUrl: "https://mesto.nomoreparties.co/v1/cohort-60",
   headers: {
-    authorization: "78d656f5-7266-4e0f-8f5e-4b00861a3a36",
+    authorization: "ea996ec4-3586-49ec-99cf-46c56e637a89",
     "Content-Type": "application/json",
   },
 })
@@ -213,20 +213,6 @@ const api = new Api({
 Promise.all([api.getRealUserInfo(), api.getInitialCards()])
   .then(([userProfile, cards]) => {
     user.setUserInfo(userProfile)
-    // Использовал контрольную проверку для попадания правильных данных
-    /* const error_title = "При получении данных с сервера"
-    const editName = popupEditProfile.querySelector(".popup__input_type_name")
-    const editJob = popupEditProfile.querySelector(".popup__input_type_job")
-    if (editName) {
-      editName.value = userProfile
-
-.name
-    } else console.log(error_title + " не найден Edit popup__input_type_name")
-    if (editJob) {
-      editJob.value = userProfile
-
-.about
-    } else console.log(error_title + " не найден Edit popup__input_type_job")*/
     userId = userProfile._id
     cardList.renderItems(cards)
   })

@@ -49,5 +49,5 @@
 .popup__input_type_error{border-bottom:1px solid red}
 .popup__save_disabled{background-color:#fff;border:1px solid #e5e5e5;color:#e5e5e5}
 .popup__save_valid{background:#000;color:#fff}
-@keyframes rotation{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.rotation{animation:rotation 25s linear infinite}
+@keyframes rotation{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.rotation{animation:rotation 40s linear infinite}
 
